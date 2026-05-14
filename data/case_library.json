@@ -1,0 +1,672 @@
+[
+  {
+    "name": "dontbesilent · 商业诊断付费咨询",
+    "category": "知识付费 / 付费咨询",
+    "business": "微信 1v1 商业模式诊断 + 知识星球付费社群",
+    "tags": ["付费咨询", "商业诊断", "个人IP", "知识付费", "私域", "高客单", "creator economy", "solopreneur"],
+    "platforms": ["xiaohongshu", "wechat", "knowledge_planet"],
+    "monthly_profit_wan_low": 5,
+    "monthly_profit_wan_high": 30,
+    "clone": {"cash": 9, "logic": 9, "operability": 7, "no_self": 10, "evidence": 9},
+    "rate": {
+      "main_price": "1v1 咨询 ¥1000-3000/小时",
+      "price_ladder": "免费内容 → 知识星球 ¥99-299/年 → 1v1 咨询 ¥1000+/h",
+      "hook_vs_profit": "免费小红书内容 → 1v1 咨询 ¥3000，无限倍价差"
+    },
+    "reach": {
+      "platform": "小红书 + 公众号 + 推特",
+      "content_form": "图文为主（金句体） + 偶尔长文",
+      "frequency": "每周 5-10 条小红书 + 公众号每月 4-8 篇"
+    },
+    "rhetoke": {
+      "title_template": "「[反直觉判断]」/「[业务问题] 是个错误的问题」",
+      "cover_elements": "纯文字 + 大字标题 + 简洁背景",
+      "tone": "犀利、反鸡汤、维特根斯坦哲学风、消解问题为美"
+    },
+    "rhetoric": {
+      "title_template": "「[反直觉判断]」/「[业务问题] 是个错误的问题」",
+      "cover_elements": "纯文字 + 大字标题 + 简洁背景",
+      "tone": "犀利、反鸡汤、维特根斯坦哲学风、消解问题为美"
+    },
+    "routine": {
+      "delivery": "付款后微信加好友约时间，1v1 视频/语音咨询，结束发录音 + 文字总结",
+      "promotion": "几乎不打折，靠真实用户口碑 + 案例分享",
+      "repurchase": "知识星球年费续费 + 老客户高频复咨"
+    },
+    "reality": {
+      "snapshot": "小红书 10万+粉丝，知识星球付费会员 1000+，月咨询档期常被订满",
+      "links": [
+        {"label": "小红书主账号", "url": "https://www.xiaohongshu.com/user/profile/dontbesilent"},
+        {"label": "公众号「不要沉默」", "url": "https://mp.weixin.qq.com/"},
+        {"label": "DBS Skill 工具箱", "url": "https://github.com/dontbesilent"}
+      ]
+    },
+    "actions": {
+      "today": "小红书发 1 条「反常识业务判断」，标题用「XX 是个错误的问题」句式",
+      "week": "建知识星球，定 ¥99/年，第一周不上架等内容沉淀",
+      "month": "积累 30 条优质内容后开放 1v1 咨询，先 ¥500/h 试水"
+    },
+    "one_liner": "AI 时代最大的杠杆是「说清楚」的能力 —— 把诊断卖得比执行贵。"
+  },
+  {
+    "name": "半佛仙人 · B站长视频财经科普",
+    "category": "长视频自媒体",
+    "business": "B站长视频 + 微信公众号 + 出书 + 商业广告",
+    "tags": ["B站", "长视频", "财经", "科普", "自媒体", "MCN", "广告变现"],
+    "platforms": ["bilibili", "wechat"],
+    "monthly_profit_wan_low": 50,
+    "monthly_profit_wan_high": 200,
+    "clone": {"cash": 10, "logic": 8, "operability": 4, "no_self": 10, "evidence": 9},
+    "rate": {
+      "main_price": "B站充电 ¥5/月 + 视频中插广告 ¥50-200万/条",
+      "price_ladder": "免费视频 → 充电 ¥5 → 出书 ¥59 → 商业讲座/咨询",
+      "hook_vs_profit": "免费视频引流 → 单条品牌广告 ¥100万+"
+    },
+    "reach": {
+      "platform": "B站为主 + 公众号同步",
+      "content_form": "20-40 分钟长视频，PPT + 配音解说",
+      "frequency": "每周 1-2 条长视频"
+    },
+    "rhetoric": {
+      "title_template": "「我在 [话题] 这件事上 [反常识判断]」/「关于 [话题] 你不知道的 N 件事」",
+      "cover_elements": "本人侧脸 + 大字标题 + 黄底黑字 + 数字噱头",
+      "tone": "犀利、自嘲、东北话、专业知识 + 段子化表达"
+    },
+    "routine": {
+      "delivery": "B站直接观看 / 公众号阅读，无显式交付",
+      "promotion": "全平台分发（抖音/快手切片）+ 出版社合作出书",
+      "repurchase": "粉丝忠诚度高，单条视频百万播放 + 充电会员稳定"
+    },
+    "reality": {
+      "snapshot": "B站 800万+粉丝，平均播放 200-500万，公众号 100万+",
+      "links": [
+        {"label": "B站主页", "url": "https://space.bilibili.com/9458053"},
+        {"label": "公众号「半佛仙人」", "url": "https://mp.weixin.qq.com/"},
+        {"label": "微博", "url": "https://weibo.com/u/banfo"}
+      ]
+    },
+    "actions": {
+      "today": "B站注册账号 + 看 5 条半佛视频拆开头 30 秒钩子结构",
+      "week": "选一个垂直话题（如 AI / 副业 / 科普）写第一条 10 分钟视频脚本",
+      "month": "持续每周 1 条，目标 3 个月起号到 1 万粉"
+    },
+    "one_liner": "B站长视频是少数还能用「内容深度」打败「内容数量」的赛道。"
+  },
+  {
+    "name": "小K不刺 · 小红书 AI 工具教学",
+    "category": "AI 工具教学自媒体",
+    "business": "小红书内容引流 → 知识星球付费圈 + 1v1 工具配置",
+    "tags": ["小红书", "AI工具", "教学", "知识付费", "副业", "ChatGPT", "Claude"],
+    "platforms": ["xiaohongshu", "knowledge_planet", "wechat"],
+    "monthly_profit_wan_low": 3,
+    "monthly_profit_wan_high": 15,
+    "clone": {"cash": 8, "logic": 9, "operability": 9, "no_self": 10, "evidence": 8},
+    "rate": {
+      "main_price": "知识星球 ¥99-199/年 + 单课 ¥99-299",
+      "price_ladder": "免费图文 → 入门课 ¥99 → 知识星球年订 ¥199 → 1v1 配置 ¥999",
+      "hook_vs_profit": "免费小红书 → 1v1 配置 ¥999，10 倍价差"
+    },
+    "reach": {
+      "platform": "小红书",
+      "content_form": "图文为主，9 宫格教程 + 短视频演示",
+      "frequency": "每周 4-6 条图文"
+    },
+    "rhetoric": {
+      "title_template": "「我用 [AI工具] 30 分钟做出了 [量化结果]」/「打工人必备的 N 个 AI 工具」",
+      "cover_elements": "白底 + 大字 + 红色高亮关键词 + 截图缩略",
+      "tone": "干货密度高、有具体步骤、低门槛、第一人称体验"
+    },
+    "routine": {
+      "delivery": "私信发购买链接 → 加微信 → 拉群 → 群内每周直播答疑",
+      "promotion": "限时早鸟价 + 老学员推荐 ¥30 返现",
+      "repurchase": "新工具上线即推新课程 + 年订续费"
+    },
+    "reality": {
+      "snapshot": "小红书 5-15 万粉，知识星球 500-2000 付费会员",
+      "links": [
+        {"label": "小红书代表账号搜索", "url": "https://www.xiaohongshu.com/search_result?keyword=AI%E5%B7%A5%E5%85%B7"},
+        {"label": "知识星球 AI 工具圈", "url": "https://t.zsxq.com/"},
+        {"label": "代表 AI 教程合集", "url": "https://www.xiaohongshu.com/explore"}
+      ]
+    },
+    "actions": {
+      "today": "小红书注册账号 + 发第一条「我用 ChatGPT 30 分钟做了 X」实操图文",
+      "week": "更 10 条 AI 工具实操，每条用相同标题模板测点击率",
+      "month": "1000 粉时建知识星球，¥99/年起步"
+    },
+    "one_liner": "AI 工具的红利期不是工具本身，是「教别人用工具」。"
+  },
+  {
+    "name": "蛋解创业 · 创业知识星球",
+    "category": "创业内容付费社群",
+    "business": "公众号 + 知识星球年费会员",
+    "tags": ["创业", "公众号", "知识星球", "年费会员", "私域", "知识付费"],
+    "platforms": ["wechat", "knowledge_planet"],
+    "monthly_profit_wan_low": 10,
+    "monthly_profit_wan_high": 50,
+    "clone": {"cash": 9, "logic": 9, "operability": 6, "no_self": 10, "evidence": 8},
+    "rate": {
+      "main_price": "知识星球 ¥299-999/年",
+      "price_ladder": "公众号免费 → 知识星球 ¥299 → VIP 顾问 ¥999+",
+      "hook_vs_profit": "免费公众号 → VIP ¥999，3+ 倍价差"
+    },
+    "reach": {
+      "platform": "微信公众号",
+      "content_form": "深度长文 + 创业案例拆解",
+      "frequency": "每周 3-5 篇"
+    },
+    "rhetoric": {
+      "title_template": "「[创始人/项目] 是怎么做到 [量化结果] 的」",
+      "cover_elements": "深色背景 + 项目 logo + 数据噱头",
+      "tone": "深度、实操、案例驱动、行业内幕风"
+    },
+    "routine": {
+      "delivery": "支付后扫码进知识星球 + 群内每周直播",
+      "promotion": "新人首单 7 折 + 老用户邀请返佣",
+      "repurchase": "年订到期续费 + 升级到 VIP 顾问"
+    },
+    "reality": {
+      "snapshot": "公众号 30-50 万粉，知识星球付费 5000+",
+      "links": [
+        {"label": "公众号「蛋解创业」", "url": "https://mp.weixin.qq.com/"},
+        {"label": "知识星球", "url": "https://t.zsxq.com/"},
+        {"label": "B站同步", "url": "https://space.bilibili.com/"}
+      ]
+    },
+    "actions": {
+      "today": "注册公众号 + 选 3 个真实创业案例（公开报道）做拆解练手",
+      "week": "更 5 篇案例拆解，建立内容风格",
+      "month": "5000 粉丝时开知识星球，¥299/年"
+    },
+    "one_liner": "创业内容付费的本质是「让看的人觉得自己也快做成了」。"
+  },
+  {
+    "name": "曹将 · 公众号 PPT 知识 IP",
+    "category": "知识付费个人 IP",
+    "business": "公众号 + 在线课 + 出书 + 企业内训",
+    "tags": ["PPT", "知识付费", "公众号", "个人IP", "课程", "出书", "企业培训"],
+    "platforms": ["wechat", "douyin", "bilibili"],
+    "monthly_profit_wan_low": 8,
+    "monthly_profit_wan_high": 40,
+    "clone": {"cash": 9, "logic": 9, "operability": 7, "no_self": 10, "evidence": 9},
+    "rate": {
+      "main_price": "在线课 ¥199-599 + 1v1 PPT 美化 ¥500/页",
+      "price_ladder": "免费公众号 → 模板 ¥9.9 → 在线课 ¥299 → 出书 ¥69 → 企业内训 ¥3-10万",
+      "hook_vs_profit": "免费公众号 → 企业内训 10万，万倍价差"
+    },
+    "reach": {
+      "platform": "微信公众号",
+      "content_form": "图文 + PPT 案例对比 + 模板",
+      "frequency": "每周 2-3 篇"
+    },
+    "rhetoric": {
+      "title_template": "「我用 [方法] 把 PPT 改成了 [对比效果]」",
+      "cover_elements": "PPT 截图前后对比 + 红色箭头 + 大字标题",
+      "tone": "实用主义、对比驱动、视觉化"
+    },
+    "routine": {
+      "delivery": "公众号支付 → 网盘/小鹅通发课 → 微信群答疑",
+      "promotion": "节日满减 + 老用户复购券",
+      "repurchase": "新课上线推全员 + 企业内训按合同周期"
+    },
+    "reality": {
+      "snapshot": "公众号 100万+粉，出版多本 PPT 畅销书",
+      "links": [
+        {"label": "公众号「曹将」", "url": "https://mp.weixin.qq.com/"},
+        {"label": "出版书籍京东页", "url": "https://search.jd.com/Search?keyword=%E6%9B%B9%E5%B0%86"},
+        {"label": "B站账号", "url": "https://space.bilibili.com/"}
+      ]
+    },
+    "actions": {
+      "today": "公众号注册 + 选一个职场技能（PPT/Excel/写作）建账号",
+      "week": "更 5 篇「前后对比」体图文，验证内容形式",
+      "month": "1万粉时开 ¥9.9 模板包试水转化"
+    },
+    "one_liner": "工具类教学的天花板不是粉丝量，是企业内训单价。"
+  },
+  {
+    "name": "村长说 · 公众号副业指南",
+    "category": "副业知识付费",
+    "business": "公众号 + 知识星球 + 私域社群",
+    "tags": ["副业", "公众号", "知识星球", "私域", "下沉市场", "创业"],
+    "platforms": ["wechat", "knowledge_planet"],
+    "monthly_profit_wan_low": 5,
+    "monthly_profit_wan_high": 20,
+    "clone": {"cash": 8, "logic": 9, "operability": 8, "no_self": 10, "evidence": 7},
+    "rate": {
+      "main_price": "知识星球 ¥299/年",
+      "price_ladder": "免费公众号 → 知识星球 ¥299 → 1v1 咨询 ¥999",
+      "hook_vs_profit": "免费公众号 → 1v1 ¥999，3 倍价差"
+    },
+    "reach": {
+      "platform": "微信公众号",
+      "content_form": "图文，案例 + 操作步骤",
+      "frequency": "每天 1 篇"
+    },
+    "rhetoric": {
+      "title_template": "「[小镇/普通人] 靠 [副业] 月入 [数字]」",
+      "cover_elements": "纯文字大标题 + 数字 + 接地气",
+      "tone": "下沉、接地气、案例驱动、白话风"
+    },
+    "routine": {
+      "delivery": "公众号支付 → 进知识星球 → 群内日更案例",
+      "promotion": "限时新人券 + 老带新返现",
+      "repurchase": "年订续费 + 升级到顾问服务"
+    },
+    "reality": {
+      "snapshot": "公众号 10-30 万粉，知识星球 2000-5000 付费",
+      "links": [
+        {"label": "公众号搜索「村长说」", "url": "https://mp.weixin.qq.com/"},
+        {"label": "知识星球", "url": "https://t.zsxq.com/"},
+        {"label": "代表副业指南文章", "url": "https://mp.weixin.qq.com/"}
+      ]
+    },
+    "actions": {
+      "today": "公众号开号 + 模仿其标题句式写第一篇副业案例",
+      "week": "日更 7 篇，全部用「普通人 + 副业 + 数字」句式",
+      "month": "积累 5000 粉时开知识星球，¥299/年"
+    },
+    "one_liner": "下沉市场的副业内容，比一线市场更刚需也更容易付费。"
+  },
+  {
+    "name": "Carrd · 单人独立 SaaS",
+    "category": "独立产品 / Indie SaaS",
+    "business": "极简单页网站搭建工具，订阅制",
+    "tags": ["indie hacker", "SaaS", "no-code", "单人创业", "订阅", "海外", "解决方案"],
+    "platforms": ["product_hunt", "indie_hackers", "twitter"],
+    "monthly_profit_wan_low": 30,
+    "monthly_profit_wan_high": 80,
+    "clone": {"cash": 10, "logic": 10, "operability": 5, "no_self": 10, "evidence": 10},
+    "rate": {
+      "main_price": "Pro $19/年 + Pro Plus $49/年",
+      "price_ladder": "免费版 → Pro $19/年 → Pro Plus $49/年 → Pro Standard $9/年",
+      "hook_vs_profit": "免费版 → Pro Plus $49，无限倍价差但单档价差小"
+    },
+    "reach": {
+      "platform": "ProductHunt + Twitter + IndieHackers + SEO",
+      "content_form": "产品本身 + Twitter 实时分享 MRR",
+      "frequency": "Twitter 每天，产品更新每周"
+    },
+    "rhetoric": {
+      "title_template": "「Build a single-page site in [minutes]」",
+      "cover_elements": "极简、灰白色、产品截图为主",
+      "tone": "极简主义、anti-bloat、indie hacker 真诚风"
+    },
+    "routine": {
+      "delivery": "注册即用，无客服，全自助",
+      "promotion": "免费版 forever + 年订 vs 月订诱导",
+      "repurchase": "年订自动续费 + 升级 Pro Plus"
+    },
+    "reality": {
+      "snapshot": "MRR ~$70k+/月（公开数据），单人运营 7+ 年",
+      "links": [
+        {"label": "Carrd 官网", "url": "https://carrd.co"},
+        {"label": "IndieHackers profile", "url": "https://www.indiehackers.com/product/carrd"},
+        {"label": "创始人 Twitter @ajlkn", "url": "https://twitter.com/ajlkn"}
+      ]
+    },
+    "actions": {
+      "today": "注册 IndieHackers + 阅读 Carrd 创始人故事",
+      "week": "用 no-code 工具（Carrd / Webflow）做一个最小可行单页产品",
+      "month": "上线 ProductHunt + Twitter 公开分享 MRR 0 起步"
+    },
+    "one_liner": "单人 SaaS 不是技术门槛，是「敢免费 + 敢长期」的耐力门槛。"
+  },
+  {
+    "name": "屠龙的胭脂井 · 小红书科技职场内容",
+    "category": "职场科技内容自媒体",
+    "business": "小红书 + 知乎 + 微信社群",
+    "tags": ["小红书", "职场", "科技", "硅谷", "海外", "知识IP", "知识付费"],
+    "platforms": ["xiaohongshu", "zhihu", "wechat"],
+    "monthly_profit_wan_low": 5,
+    "monthly_profit_wan_high": 25,
+    "clone": {"cash": 8, "logic": 8, "operability": 6, "no_self": 10, "evidence": 8},
+    "rate": {
+      "main_price": "知识星球 ¥499/年 + 1v1 职业咨询 ¥1500/h",
+      "price_ladder": "免费小红书 → 星球 ¥499 → 1v1 ¥1500",
+      "hook_vs_profit": "免费内容 → 1v1 ¥1500/h，无限倍价差"
+    },
+    "reach": {
+      "platform": "小红书 + 知乎",
+      "content_form": "图文长文 + 职场观察 + 硅谷见闻",
+      "frequency": "小红书每周 3-5 条 + 知乎每月 2-3 篇"
+    },
+    "rhetoric": {
+      "title_template": "「[硅谷/大厂] 真相 / 我在 [公司] 看到的 [反常识]」",
+      "cover_elements": "白底文字 + 简洁排版 + 真人头像",
+      "tone": "理性、信息密度高、海外视角、反鸡汤"
+    },
+    "routine": {
+      "delivery": "私信咨询 → 加微信 → 视频咨询",
+      "promotion": "几乎不打折，靠口碑",
+      "repurchase": "年订续费 + 高频复咨"
+    },
+    "reality": {
+      "snapshot": "小红书 30万+ 粉，知乎大V，知识付费用户 1000+",
+      "links": [
+        {"label": "小红书账号", "url": "https://www.xiaohongshu.com/user/profile/"},
+        {"label": "知乎账号", "url": "https://www.zhihu.com/people/"},
+        {"label": "代表文章合集", "url": "https://www.zhihu.com/"}
+      ]
+    },
+    "actions": {
+      "today": "小红书发第一条「我在 [行业] 看到的 [反常识]」短文",
+      "week": "积累 5 条同主题内容，验证调性",
+      "month": "1万粉时开知识星球或 1v1 咨询"
+    },
+    "one_liner": "信息差是最便宜的护城河——只要你真的在那个圈子里。"
+  },
+  {
+    "name": "Notion 模板付费下载 · Marie Poulin 模式",
+    "category": "数字产品 / 模板付费",
+    "business": "免费 Notion 模板引流 + 付费高级模板 + 训练营",
+    "tags": ["Notion", "数字模板", "付费下载", "海外", "indie", "templates", "Gumroad"],
+    "platforms": ["gumroad", "twitter", "notion_official"],
+    "monthly_profit_wan_low": 3,
+    "monthly_profit_wan_high": 15,
+    "clone": {"cash": 8, "logic": 9, "operability": 8, "no_self": 10, "evidence": 9},
+    "rate": {
+      "main_price": "高级模板 $29-99 + 训练营 $599-2999",
+      "price_ladder": "免费模板 → 付费模板 $29 → 模板包 $99 → 训练营 $2999",
+      "hook_vs_profit": "免费模板 → 训练营 $2999，无限倍价差"
+    },
+    "reach": {
+      "platform": "Twitter + Notion 官方推荐 + 个人网站",
+      "content_form": "Twitter 短推文 + Notion 模板截图 + YouTube 演示",
+      "frequency": "Twitter 每天 + 训练营每季 1 期"
+    },
+    "rhetoke": {
+      "title_template": "「The [Notion] template I use to [solve X problem]」",
+      "cover_elements": "Notion 截图 + 简洁标题 + 渐变背景",
+      "tone": "实用主义、productivity、深入浅出"
+    },
+    "rhetoric": {
+      "title_template": "「The [Notion] template I use to [solve X problem]」",
+      "cover_elements": "Notion 截图 + 简洁标题 + 渐变背景",
+      "tone": "实用主义、productivity、深入浅出"
+    },
+    "routine": {
+      "delivery": "Gumroad 购买 → 自动发模板链接 → 用户复制到自己 Notion",
+      "promotion": "Bundle 折扣 + 老学员训练营 8 折",
+      "repurchase": "新模板上线推全员 + 训练营复购"
+    },
+    "reality": {
+      "snapshot": "Twitter 30k+ 粉，Gumroad 累计销售 $500k+",
+      "links": [
+        {"label": "Marie Poulin Twitter", "url": "https://twitter.com/mariepoulin"},
+        {"label": "Notion Mastery 网站", "url": "https://www.notionmastery.com/"},
+        {"label": "Gumroad 商品页", "url": "https://gumroad.com/discover?query=notion"}
+      ]
+    },
+    "actions": {
+      "today": "Notion 注册 + 做一个解决你自己问题的模板（如读书清单/项目管理）",
+      "week": "上 Gumroad 免费发布，Twitter 分享，看下载量",
+      "month": "出第二个付费版（$9-19），用免费版引流转化"
+    },
+    "one_liner": "数字产品的复利不是销量，是「同一个文件可以卖一万次」。"
+  },
+  {
+    "name": "B站 AI 教学 UP · 林粒粒呀模式",
+    "category": "技术教学 UP 主",
+    "business": "B站免费教程 → 训练营 / 知识星球 / 1v1 私教",
+    "tags": ["B站", "AI教学", "Python", "数据分析", "知识付费", "训练营"],
+    "platforms": ["bilibili", "wechat", "knowledge_planet"],
+    "monthly_profit_wan_low": 5,
+    "monthly_profit_wan_high": 30,
+    "clone": {"cash": 9, "logic": 9, "operability": 7, "no_self": 10, "evidence": 8},
+    "rate": {
+      "main_price": "训练营 ¥1999-3999 + 知识星球 ¥299/年",
+      "price_ladder": "免费视频 → 知识星球 ¥299 → 训练营 ¥1999 → 1v1 ¥1999/h",
+      "hook_vs_profit": "免费 B站 → 1v1 ¥1999/h，无限倍价差"
+    },
+    "reach": {
+      "platform": "B站",
+      "content_form": "5-15 分钟教学视频 + 配套代码",
+      "frequency": "每周 2-3 条"
+    },
+    "rhetoric": {
+      "title_template": "「[小白] 也能学会的 [技术] / N 分钟搞懂 [概念]」",
+      "cover_elements": "本人头像 + 大字标题 + 黄底 + 数字",
+      "tone": "亲切、零基础友好、实用主义"
+    },
+    "routine": {
+      "delivery": "视频简介导流公众号 → 加助理微信 → 进训练营群",
+      "promotion": "训练营开班前 7 折预售 + 老学员复购券",
+      "repurchase": "进阶班 + 1v1 私教升级"
+    },
+    "reality": {
+      "snapshot": "B站 30-100 万粉，训练营每期 200-500 人",
+      "links": [
+        {"label": "B站搜索「Python 教学 UP 主」", "url": "https://search.bilibili.com/all?keyword=python%E6%95%99%E5%AD%A6"},
+        {"label": "代表 UP「林粒粒呀」", "url": "https://space.bilibili.com/"},
+        {"label": "知识星球", "url": "https://t.zsxq.com/"}
+      ]
+    },
+    "actions": {
+      "today": "B站注册 + 选 1 个垂直技术（如 Python / Excel / AI 工具）",
+      "week": "更 3 条「N 分钟学会 X」短视频",
+      "month": "3000 粉时开训练营，¥499 起步"
+    },
+    "one_liner": "技术教学的真护城河不是技术深度，是「让小白看懂」的能力。"
+  },
+  {
+    "name": "闲鱼数字模板倒卖 · 资料类",
+    "category": "无货源 / 信息差变现",
+    "business": "搜集免费资料 → 整理打包 → 闲鱼挂售 ¥5-50",
+    "tags": ["闲鱼", "无货源", "数字产品", "信息差", "副业", "低门槛"],
+    "platforms": ["xianyu", "taobao"],
+    "monthly_profit_wan_low": 0.5,
+    "monthly_profit_wan_high": 5,
+    "clone": {"cash": 5, "logic": 9, "operability": 10, "no_self": 10, "evidence": 7},
+    "rate": {
+      "main_price": "¥5-50 / 份",
+      "price_ladder": "单份 ¥9.9 → 合集包 ¥29 → 全套 ¥99",
+      "hook_vs_profit": "低价引流 + 合集溢价"
+    },
+    "reach": {
+      "platform": "闲鱼",
+      "content_form": "9 张图 + 详细描述",
+      "frequency": "每天上新 1-3 个"
+    },
+    "rhetoric": {
+      "title_template": "「[岗位/场景] 必备 [资料类型] N 份合集」",
+      "cover_elements": "白底文字 + 图标拼贴 + 数字噱头",
+      "tone": "实用、清单式、价值锚点（'比某某课便宜 100 倍'）"
+    },
+    "routine": {
+      "delivery": "买家拍下 → 自动回复网盘链接 + 提取码",
+      "promotion": "凑单优惠 + 关注送资料",
+      "repurchase": "新品上架推关注用户 + 建群"
+    },
+    "reality": {
+      "snapshot": "成熟卖家月销 200-500 单，毛利 80%+",
+      "links": [
+        {"label": "闲鱼 APP 搜索「PPT 模板」", "url": "https://2.taobao.com/"},
+        {"label": "知乎闲鱼无货源教程", "url": "https://www.zhihu.com/search?q=%E9%97%B2%E9%B1%BC%E6%97%A0%E8%B4%A7%E6%BA%90"},
+        {"label": "代表卖家页（搜索得到）", "url": "https://www.goofish.com/"}
+      ]
+    },
+    "actions": {
+      "today": "闲鱼实名认证 + 选一个垂直品类（PPT / Excel / 简历模板）",
+      "week": "上架 10 个商品，全部 ¥5-9.9 试水",
+      "month": "月销 50+ 后做合集包提价 ¥29-49"
+    },
+    "one_liner": "闲鱼无货源是验证'你会不会做生意'的最低成本沙盒。"
+  },
+  {
+    "name": "AI 写真 · 妙鸭模式个人版",
+    "category": "AI 形象照工作室",
+    "business": "小红书种草 → 微信定制 AI 写真 ¥99-499",
+    "tags": ["AI写真", "小红书", "副业", "AI工具", "高客单", "图像生成"],
+    "platforms": ["xiaohongshu", "wechat"],
+    "monthly_profit_wan_low": 3,
+    "monthly_profit_wan_high": 12,
+    "clone": {"cash": 8, "logic": 9, "operability": 9, "no_self": 10, "evidence": 7},
+    "rate": {
+      "main_price": "¥99-499 / 套",
+      "price_ladder": "试拍 ¥9.9 → 单风格 ¥99 → 全套 ¥499 → 商务定制 ¥999",
+      "hook_vs_profit": "¥9.9 试拍 → ¥999 商务，100 倍价差"
+    },
+    "reach": {
+      "platform": "小红书",
+      "content_form": "9 宫格成品图 + 短视频 before/after",
+      "frequency": "每周 5-10 条"
+    },
+    "rhetoric": {
+      "title_template": "「我用 AI 拍了 [场景] 写真，效果竟然 [超预期]」",
+      "cover_elements": "成品对比图 + 大字标题 + 高饱和色彩",
+      "tone": "种草向、视觉冲击、'你也能做'的鼓动感"
+    },
+    "routine": {
+      "delivery": "私信加微信 → 收照片 → 24-48h 出图 → 满意为止",
+      "promotion": "首拍 9.9 + 老客户介绍 ¥30 返现",
+      "repurchase": "新风格上线推全员 + 节日限定主题"
+    },
+    "reality": {
+      "snapshot": "小红书 1-5 万粉，单月 100-300 单不等",
+      "links": [
+        {"label": "小红书搜「AI 写真」", "url": "https://www.xiaohongshu.com/search_result?keyword=AI%E5%86%99%E7%9C%9F"},
+        {"label": "妙鸭官方", "url": "https://miaoya.art/"},
+        {"label": "知乎教程合集", "url": "https://www.zhihu.com/search?q=AI%E5%86%99%E7%9C%9F%E5%89%AF%E4%B8%9A"}
+      ]
+    },
+    "actions": {
+      "today": "选一个 AI 出图工具（妙鸭/Midjourney/Gemini）跑通一套自己的写真",
+      "week": "小红书发 5 条「我用 AI 拍了 X」对比图",
+      "month": "100 粉时开始接单，¥99 起步"
+    },
+    "one_liner": "AI 写真本质是把「技术使用门槛」转化为「服务溢价」。"
+  },
+  {
+    "name": "小红书烘焙宝妈 · 私房模式",
+    "category": "私房手作食品",
+    "business": "小红书种草 → 微信下单 → 同城配送/快递",
+    "tags": ["小红书", "烘焙", "宝妈", "私房", "手作", "副业", "同城"],
+    "platforms": ["xiaohongshu", "wechat"],
+    "monthly_profit_wan_low": 1,
+    "monthly_profit_wan_high": 8,
+    "clone": {"cash": 6, "logic": 9, "operability": 8, "no_self": 10, "evidence": 6},
+    "rate": {
+      "main_price": "¥58-198 / 单",
+      "price_ladder": "尝鲜小份 ¥39 → 标准款 ¥98 → 礼盒 ¥198",
+      "hook_vs_profit": "¥39 引流 → ¥198 礼盒，5 倍价差"
+    },
+    "reach": {
+      "platform": "小红书",
+      "content_form": "成品 9 宫格 + 制作过程短视频 + 客户反馈",
+      "frequency": "每周 3-5 条"
+    },
+    "rhetoric": {
+      "title_template": "「[节日/场景] 必备的手作 [品类]」",
+      "cover_elements": "高饱和色彩成品图 + 暖色调 + 大字标题",
+      "tone": "温暖、家常、'宝妈也能做'、亲切"
+    },
+    "routine": {
+      "delivery": "私信下单 → 微信付款 → 同城闪送 / 顺丰快递",
+      "promotion": "节日限定款 + 老客复购送小样",
+      "repurchase": "节日推送 + 季节限定 + 新品试吃团"
+    },
+    "reality": {
+      "snapshot": "小红书 1-3 万粉，月单 50-150 个，毛利 50%",
+      "links": [
+        {"label": "小红书搜「私房烘焙」", "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%A7%81%E6%88%BF%E7%83%98%E7%84%99"},
+        {"label": "知乎宝妈副业指南", "url": "https://www.zhihu.com/search?q=%E5%AE%9D%E5%A6%88%E5%89%AF%E4%B8%9A%E7%83%98%E7%84%99"},
+        {"label": "代表账号搜索结果", "url": "https://www.xiaohongshu.com/search_result"}
+      ]
+    },
+    "actions": {
+      "today": "选 1-2 个拿手品类（蛋糕/曲奇/吐司）做样品拍图",
+      "week": "小红书发 3 条「节日 + 品类」内容，私信测需求",
+      "month": "稳定接单后申请食品经营许可"
+    },
+    "one_liner": "私房烘焙的护城河不是手艺，是「同城信任 + 快速响应」。"
+  },
+  {
+    "name": "小宇宙独立播客 + 商单模式",
+    "category": "播客 IP / 商单变现",
+    "business": "小宇宙播客 → 商业广告 + 知识星球 + 出书",
+    "tags": ["播客", "小宇宙", "独立创作者", "商单", "知识IP", "音频"],
+    "platforms": ["xiaoyuzhou", "apple_podcast", "wechat"],
+    "monthly_profit_wan_low": 3,
+    "monthly_profit_wan_high": 20,
+    "clone": {"cash": 7, "logic": 8, "operability": 6, "no_self": 10, "evidence": 8},
+    "rate": {
+      "main_price": "单期商单 ¥1-10 万 + 知识星球 ¥99-299/年",
+      "price_ladder": "免费节目 → 知识星球 ¥199 → 商单 ¥1-10 万",
+      "hook_vs_profit": "免费节目 → 头部商单 10 万，无限倍价差"
+    },
+    "reach": {
+      "platform": "小宇宙 + Apple Podcast",
+      "content_form": "60-120 分钟深度对话",
+      "frequency": "每周 1 期"
+    },
+    "rhetoric": {
+      "title_template": "「[嘉宾] × [话题]：[反常识金句]」",
+      "cover_elements": "嘉宾头像 + 节目 logo + 简洁排版",
+      "tone": "深度、慢节奏、思想性、长对话"
+    },
+    "routine": {
+      "delivery": "音频平台直接收听，无显式交付",
+      "promotion": "公众号 + 微信群分发 + 嘉宾互推",
+      "repurchase": "听众粘性高，单期播放 1-10 万 + 商单按月签"
+    },
+    "reality": {
+      "snapshot": "小宇宙 5000-5万订阅，单期 1-10 万播放",
+      "links": [
+        {"label": "小宇宙官网", "url": "https://www.xiaoyuzhoufm.com/"},
+        {"label": "代表节目搜索", "url": "https://www.xiaoyuzhoufm.com/search"},
+        {"label": "公众号「JustPod」", "url": "https://mp.weixin.qq.com/"}
+      ]
+    },
+    "actions": {
+      "today": "选一个垂直话题（科技/商业/文化）+ 列 5 个潜在嘉宾",
+      "week": "录第一期 60 分钟节目（电话也行）",
+      "month": "持续每周 1 期，3 个月做到 1000 订阅"
+    },
+    "one_liner": "播客是「内容深度 + 关系密度」的复利游戏。"
+  },
+  {
+    "name": "小红书穿搭分销账号",
+    "category": "穿搭种草 / 淘宝联盟",
+    "business": "小红书穿搭笔记 → 淘宝/京东商品分销 → 佣金",
+    "tags": ["小红书", "穿搭", "淘宝联盟", "分销", "种草", "佣金", "女性"],
+    "platforms": ["xiaohongshu", "taobao"],
+    "monthly_profit_wan_low": 1,
+    "monthly_profit_wan_high": 10,
+    "clone": {"cash": 6, "logic": 9, "operability": 9, "no_self": 10, "evidence": 7},
+    "rate": {
+      "main_price": "无固定单价，按佣金 5-30%",
+      "price_ladder": "免费内容 → 佣金分销 → 自营选品 → 直播带货",
+      "hook_vs_profit": "免费穿搭 → 直播带货客单 ¥199-599"
+    },
+    "reach": {
+      "platform": "小红书",
+      "content_form": "图文穿搭 9 宫格 + 短视频 OOTD",
+      "frequency": "每周 5-7 条"
+    },
+    "rhetoric": {
+      "title_template": "「[身材/场景] 必入的 N 件 [品类]」",
+      "cover_elements": "全身穿搭图 + 镜子自拍 + 暖色滤镜",
+      "tone": "种草、亲切、'你也能驾驭'、真实身材"
+    },
+    "routine": {
+      "delivery": "评论/私信发淘宝口令 → 用户跳转购买 → 平台结算佣金",
+      "promotion": "粉丝专属优惠券 + 评论抽奖",
+      "repurchase": "新品上架推关注用户 + 季节换季合集"
+    },
+    "reality": {
+      "snapshot": "小红书 5-30 万粉，月佣金 1-10 万",
+      "links": [
+        {"label": "小红书搜「穿搭」", "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%A9%BF%E6%90%AD"},
+        {"label": "淘宝联盟招商", "url": "https://pub.alimama.com/"},
+        {"label": "知乎小红书带货指南", "url": "https://www.zhihu.com/search?q=%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%B8%A6%E8%B4%A7"}
+      ]
+    },
+    "actions": {
+      "today": "选定身材/年龄定位（小个子/微胖/职场）+ 拍 3 套穿搭",
+      "week": "小红书更 5 条同身材定位的笔记",
+      "month": "1000 粉时申请淘宝联盟，挂 5-10 个高佣商品"
+    },
+    "one_liner": "穿搭分销的护城河不是审美，是「锁定一种身材或场景」的精度。"
+  }
+]

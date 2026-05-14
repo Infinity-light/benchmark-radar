@@ -1,0 +1,855 @@
+{
+  "engine": "skilllens-python-cli",
+  "engineVersion": "0.2.0",
+  "source": "official SkillLens CLI",
+  "mode": "agent-side deep review",
+  "rubricSchemaVersion": 3,
+  "rubricHash": "5e5a124282f8cf33",
+  "spec": "claude",
+  "language": "zh",
+  "score": 94.34,
+  "grade": "S",
+  "pillars": [
+    {
+      "id": "business_value",
+      "name_zh": "选题价值",
+      "name_en": "Skill Value",
+      "weight": 25,
+      "score": 22.5,
+      "evaluated": true,
+      "llmCoverage": {
+        "evaluated": 5,
+        "total": 5
+      },
+      "dimensions": [
+        {
+          "id": "biz.target_users",
+          "name_zh": "目标用户清晰度",
+          "name_en": "Target User Clarity",
+          "weight": 5,
+          "score": 4.6,
+          "checks": [
+            {
+              "id": "biz.target_users.specific",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Target users 章节列出 4 类具体角色（solopreneur / 副业探索者 / 内容创作者 / indie hacker），并明确写了'不适合谁'。可直接识别。",
+              "weight": 5,
+              "ratio": 0.92,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可为每类用户补一句典型痛点场景，如'内容创作者：流量起来了但变现路径不清'。",
+              "confidence": 0.9
+            }
+          ]
+        },
+        {
+          "id": "biz.problem_reality",
+          "name_zh": "用户需求真实度",
+          "name_en": "User Need Realness",
+          "weight": 6,
+          "score": 5.4,
+          "checks": [
+            {
+              "id": "biz.problem_reality.is_real",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Why this skill 与方法论部分明确给出 3 个真实失败模式：粉丝多但不赚钱、颗粒度不到细节、AI 反过来问'你的兴趣是什么'。这是 indie hacker / 副业圈反复验证的真痛点。",
+              "weight": 6,
+              "ratio": 0.9,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可补 1 个真实用户故事或社区抱怨截图作为外部证据。",
+              "confidence": 0.88
+            }
+          ]
+        },
+        {
+          "id": "biz.value_articulation",
+          "name_zh": "价值主张清晰度",
+          "name_en": "Value Articulation",
+          "weight": 5,
+          "score": 4.5,
+          "checks": [
+            {
+              "id": "biz.value_articulation.matched_to_type",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "决策辅助型 skill，价值主张'唯一强制三件事（拒绝自我陷阱 + 强制价格证据 + 强制 5R 颗粒度）'清晰具体。",
+              "weight": 5,
+              "ratio": 0.9,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可加量化对比：'用了之后用户做对标决策的时间从 N 小时减到 M 分钟'。",
+              "confidence": 0.85
+            }
+          ]
+        },
+        {
+          "id": "biz.usage_frequency",
+          "name_zh": "复用价值",
+          "name_en": "Repeat-use Value",
+          "weight": 5,
+          "score": 4.6,
+          "checks": [
+            {
+              "id": "biz.usage_frequency.estimable",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## When to use 章节明确分层：高频（每次新业务前）/ 中频（每月复盘）/ 低频（被问时），并说明可累积成个人对标库。",
+              "weight": 5,
+              "ratio": 0.92,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可加'对标库导出/导入'机制让多次调用更明确累积。",
+              "confidence": 0.88
+            }
+          ]
+        },
+        {
+          "id": "biz.moat_potential",
+          "name_zh": "沉淀 / 记忆点潜力",
+          "name_en": "Moat / Memorability Potential",
+          "weight": 4,
+          "score": 3.4,
+          "checks": [
+            {
+              "id": "biz.moat_potential.compounding",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "每次调用产出可存档的 HTML 报告（不是一次性输出消失），多次累积形成个人对标库。CLONE/5R 框架本身是可识别的'品牌口吻'。",
+              "weight": 4,
+              "ratio": 0.85,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可设计'让第 100 次调用比第 1 次知道更多'的中间产物持久化机制（如把用户已采纳过的对标标记 adopted）。",
+              "confidence": 0.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "market",
+      "name_zh": "市场竞争力",
+      "name_en": "Market Competitiveness",
+      "weight": 15,
+      "score": 14.06,
+      "evaluated": true,
+      "llmCoverage": {
+        "evaluated": 4,
+        "total": 4
+      },
+      "dimensions": [
+        {
+          "id": "market.differentiation",
+          "name_zh": "差异化",
+          "name_en": "Differentiation",
+          "weight": 5,
+          "score": 4.65,
+          "checks": [
+            {
+              "id": "market.differentiation.clear",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Why this skill 章节用表格对比 4 个真实同类工具（ChatGPT 直接问 / ai-side-hustle-finder / ProductHunt Business Idea Generator / dbs-benchmark），并给出一句话差异化。",
+              "weight": 5,
+              "ratio": 0.93,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可加 1 张 demo gif 或 before/after 截图直观展示差异。",
+              "confidence": 0.9
+            }
+          ]
+        },
+        {
+          "id": "market.scope_focus",
+          "name_zh": "聚焦度",
+          "name_en": "Scope Focus",
+          "weight": 4,
+          "score": 3.8,
+          "checks": [
+            {
+              "id": "market.scope_focus.disciplined",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "整个 skill 只做'找对标'一件事，不涉及商业模式生成、选品、内容创作、执行陪跑。description 中也只有'找对标'相关动词。",
+              "weight": 4,
+              "ratio": 0.95,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "无明显改进点；scope 已极度聚焦。",
+              "confidence": 0.92
+            }
+          ]
+        },
+        {
+          "id": "market.llm_replaceable",
+          "name_zh": "通用模型可替代风险",
+          "name_en": "LLM Replaceability Risk",
+          "weight": 3,
+          "score": 2.76,
+          "checks": [
+            {
+              "id": "market.llm_replaceable.has_edge",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "远超裸 LLM：自创 CLONE 五道闸门 + 5R 复刻矩阵 + 15+ 预置案例库 + 多平台实时数据源调用方案 + 强制证据链规则。裸 LLM 给出的对标全是'粉丝多但不赚钱'。",
+              "weight": 3,
+              "ratio": 0.92,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可加'同一 query 在裸 ChatGPT vs 本 skill'的输出对比示例。",
+              "confidence": 0.88
+            }
+          ]
+        },
+        {
+          "id": "market.existing_alternatives",
+          "name_zh": "竞品调研意识",
+          "name_en": "Competitor Awareness",
+          "weight": 3,
+          "score": 2.85,
+          "checks": [
+            {
+              "id": "market.existing_alternatives.surveyed",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Why this skill 表格点名 4 个真实竞品（含具体名字 / URL / 不足），覆盖国内 + 海外 + 通用 LLM + 同类方法论 skill 全谱。",
+              "weight": 3,
+              "ratio": 0.95,
+              "evidenceSource": "external_data",
+              "confidencePolicy": "medium",
+              "fix": "无明显改进；竞品调研意识充分。",
+              "confidence": 0.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "runtime_cost",
+      "name_zh": "运行成本",
+      "name_en": "Runtime Cost",
+      "weight": 15,
+      "score": 14.6,
+      "evaluated": true,
+      "llmCoverage": {
+        "evaluated": 2,
+        "total": 2
+      },
+      "dimensions": [
+        {
+          "id": "cost.context_budget",
+          "name_zh": "上下文预算",
+          "name_en": "Context Budget",
+          "weight": 4,
+          "score": 4.0,
+          "checks": [
+            {
+              "id": "cost.context_budget.skill_md_size",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "5094 chars (~1698 tokens)",
+              "weight": 4,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            }
+          ]
+        },
+        {
+          "id": "cost.reference_layering",
+          "name_zh": "分层加载",
+          "name_en": "Reference Layering",
+          "weight": 4,
+          "score": 4.0,
+          "checks": [
+            {
+              "id": "cost.reference_layering.has_dirs",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "layered dirs detected",
+              "weight": 4,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            }
+          ]
+        },
+        {
+          "id": "cost.external_dependencies",
+          "name_zh": "外部依赖重量",
+          "name_en": "External Dependency Weight",
+          "weight": 4,
+          "score": 3.84,
+          "checks": [
+            {
+              "id": "cost.external_dependencies.declared",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "manifest + dependencies section found",
+              "weight": 2,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "cost.external_dependencies.weight_assessed",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Dependencies 表格明确列出仅 Python 3.10+ 标准库 + 可选 agent-reach-pro skill，无外部付费 API、无密钥要求。所有数据本地处理。",
+              "weight": 2,
+              "ratio": 0.92,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "可加'最差情景成本估算：每次调用 < $0.01'一句兜底说明。",
+              "confidence": 0.9
+            }
+          ]
+        },
+        {
+          "id": "cost.cache_friendliness",
+          "name_zh": "可缓存性",
+          "name_en": "Cache Friendliness",
+          "weight": 3,
+          "score": 2.76,
+          "checks": [
+            {
+              "id": "cost.cache_friendliness.idempotent_inputs",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Inputs 章节明确写出'缓存键 = sha256(query + platform + profit_target_wan)'，并指出 top 字段不影响哈希。重复查询命中缓存说明清楚。",
+              "weight": 3,
+              "ratio": 0.92,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "可加 cache TTL 建议（实际已在 ## Determinism 中给出 24h）。",
+              "confidence": 0.88
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reliability",
+      "name_zh": "效果稳定性",
+      "name_en": "Output Reliability",
+      "weight": 20,
+      "score": 18.68,
+      "evaluated": true,
+      "llmCoverage": {
+        "evaluated": 5,
+        "total": 5
+      },
+      "dimensions": [
+        {
+          "id": "rel.task_model_fit",
+          "name_zh": "任务模型匹配度",
+          "name_en": "Task–Model Fit",
+          "weight": 5,
+          "score": 4.5,
+          "checks": [
+            {
+              "id": "rel.task_model_fit.in_zone",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "核心任务是结构化提取 + 模板匹配 + 报告生成（LLM 稳定区）。CLONE 评分按预先打分的字段读取（脚本兜底），无需 LLM 实时算精确数值。",
+              "weight": 5,
+              "ratio": 0.9,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "可加 ## Task-Model Fit 小节明确每步'谁来做'（脚本 vs LLM）。",
+              "confidence": 0.85
+            }
+          ]
+        },
+        {
+          "id": "rel.script_fallback",
+          "name_zh": "脚本兜底",
+          "name_en": "Script Fallback",
+          "weight": 4,
+          "score": 4.0,
+          "checks": [
+            {
+              "id": "rel.script_fallback.has_scripts",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "scripts/ directory present",
+              "weight": 4,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            }
+          ]
+        },
+        {
+          "id": "rel.output_validation",
+          "name_zh": "输出校验",
+          "name_en": "Output Validation",
+          "weight": 4,
+          "score": 3.76,
+          "checks": [
+            {
+              "id": "rel.output_validation.declared",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "outputs section + schema-like declaration",
+              "weight": 2,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "rel.output_validation.enforced",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Workflow 第 6 步显式'校验输出：检查 HTML 文件已生成、候选数 ≥ 1、每个候选 5R 字段非空，失败按 ## Failure 处理'。",
+              "weight": 2,
+              "ratio": 0.88,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "可在 scripts/ 加一个 validate.py 用 jsonschema 做严格校验。",
+              "confidence": 0.82
+            }
+          ]
+        },
+        {
+          "id": "rel.idempotency",
+          "name_zh": "幂等性",
+          "name_en": "Idempotency",
+          "weight": 3,
+          "score": 2.76,
+          "checks": [
+            {
+              "id": "rel.idempotency.discussed",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Determinism 章节专门讨论：明确区分'幂等步骤（脚本/规则）'vs'抖动步骤（实时抓取）'，并指出 80% 输出来自确定性脚本。",
+              "weight": 3,
+              "ratio": 0.92,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "可在涉及 LLM 推理的环节明确建议 temperature=0。",
+              "confidence": 0.88
+            }
+          ]
+        },
+        {
+          "id": "rel.failure_path",
+          "name_zh": "异常路径",
+          "name_en": "Failure Path",
+          "weight": 2,
+          "score": 1.9,
+          "checks": [
+            {
+              "id": "rel.failure_path.explicit",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Failure 章节用表格列出 5 种失败类型 + 具体处理（rejected JSON / 自动降级 / 静态兜底 / exit 1 / error 提示）。",
+              "weight": 2,
+              "ratio": 0.95,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "无明显改进；失败路径覆盖度好。",
+              "confidence": 0.9
+            }
+          ]
+        },
+        {
+          "id": "rel.edge_cases",
+          "name_zh": "边界情况",
+          "name_en": "Edge Cases",
+          "weight": 2,
+          "score": 1.76,
+          "checks": [
+            {
+              "id": "rel.edge_cases.discussed",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Known limitations 列出 3 条已知边界（案例库覆盖度、价格估算精度、多平台抓取依赖），并说明应对方式。",
+              "weight": 2,
+              "ratio": 0.88,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "可补'超长 query / 空 query / 多语种混排 query'等纯输入边界场景。",
+              "confidence": 0.85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writeup",
+      "name_zh": "书写规范性",
+      "name_en": "Writeup Quality",
+      "weight": 25,
+      "score": 24.5,
+      "evaluated": true,
+      "llmCoverage": {
+        "evaluated": 6,
+        "total": 6
+      },
+      "dimensions": [
+        {
+          "id": "meta",
+          "name_zh": "元数据规范性",
+          "name_en": "Metadata Conformance",
+          "weight": 4,
+          "score": 4.0,
+          "checks": [
+            {
+              "id": "meta.frontmatter_valid",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "frontmatter parsed",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "meta.required_fields",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "all present: ['name', 'description']",
+              "weight": 1.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "meta.recommended_fields",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "all present: ['license', 'version']",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "meta.name_format",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "name='benchmark-radar'",
+              "weight": 0.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            }
+          ]
+        },
+        {
+          "id": "discoverability",
+          "name_zh": "可发现性",
+          "name_en": "Discoverability",
+          "weight": 5,
+          "score": 4.9,
+          "checks": [
+            {
+              "id": "disc.length_ok",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "326 chars (<= 1024)",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "disc.has_trigger_cue",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "trigger cue found",
+              "weight": 1.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "disc.third_person",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "third-person ok",
+              "weight": 0.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "disc.keyword_coverage",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "description 含 10+ 触发关键词，中英双语全覆盖：找对标 / benchmark / 我想模仿 / 该模仿谁 / 市场上谁在做 X / find competitor / similar projects / 对标分析 / 抄谁 / who should I clone。",
+              "weight": 2,
+              "ratio": 0.95,
+              "evidenceSource": "llm_judgment",
+              "confidencePolicy": "medium",
+              "fix": "无明显改进；keyword 覆盖广而精。",
+              "confidence": 0.9
+            }
+          ]
+        },
+        {
+          "id": "structure",
+          "name_zh": "结构与可读性",
+          "name_en": "Structure & Readability",
+          "weight": 3,
+          "score": 3.0,
+          "checks": [
+            {
+              "id": "struct.has_headings",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "15 H2 sections",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "struct.has_workflow",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "workflow section found",
+              "weight": 1.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "struct.md_well_formed",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "4 code fences, balanced",
+              "weight": 0.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            }
+          ]
+        },
+        {
+          "id": "actionability",
+          "name_zh": "可执行性",
+          "name_en": "Actionability",
+          "weight": 6,
+          "score": 5.64,
+          "checks": [
+            {
+              "id": "act.steps_atomic",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Workflow 6 步，每步一个动词一件事：审查输入 / 匹配候选 / CLONE 过滤 / 5R 补全 / 生成报告 / 校验输出。",
+              "weight": 2,
+              "ratio": 0.92,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "无明显改进；原子化做得好。",
+              "confidence": 0.9
+            },
+            {
+              "id": "act.io_explicit",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Inputs 给出字段表（含必填/可选/影响输出/缓存键），## Outputs 给出完整 JSON schema。IO 极度明确。",
+              "weight": 1.5,
+              "ratio": 0.95,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "无明显改进；IO 透明度顶级。",
+              "confidence": 0.92
+            },
+            {
+              "id": "act.tool_calls_clear",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "code blocks present",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "act.no_ambiguity",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "关键步骤使用确定语气：'立即返回'、'淘汰'、'按 ## Failure 处理'、'重试 3 次'。少用'也许 / 可能'。",
+              "weight": 1,
+              "ratio": 0.88,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "可把'建议设 cache TTL = 24h'改成默认值 '24h'。",
+              "confidence": 0.85
+            },
+            {
+              "id": "act.has_examples",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "example keyword found",
+              "weight": 0.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            }
+          ]
+        },
+        {
+          "id": "safety",
+          "name_zh": "安全合规",
+          "name_en": "Safety & Compliance",
+          "weight": 3,
+          "score": 2.95,
+          "checks": [
+            {
+              "id": "safe.dangerous_ops_flagged",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "no destructive ops",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "safe.secrets_policy",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "no literal keys",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "safe.least_privilege",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "明确仅使用 Python 标准库 + 可选 agent-reach-pro，无外部 API、无密钥、无 telemetry。权限最小化做到极致。",
+              "weight": 0.5,
+              "ratio": 0.95,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "无明显改进。",
+              "confidence": 0.92
+            },
+            {
+              "id": "safe.privacy",
+              "type": "llm",
+              "status": "pass",
+              "evidence": "## Privacy 章节明确 4 条：用户输入仅本地处理 / 不收集不存储不上传 / 无 telemetry 无埋点 / HTML 报告生成在本地路径。",
+              "weight": 0.5,
+              "ratio": 0.95,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high",
+              "fix": "无明显改进；隐私处理表述充分。",
+              "confidence": 0.92
+            }
+          ]
+        },
+        {
+          "id": "maintainability",
+          "name_zh": "可维护性",
+          "name_en": "Maintainability",
+          "weight": 4,
+          "score": 4.0,
+          "checks": [
+            {
+              "id": "maint.has_version",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "version=0.1.0",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "maint.declares_deps",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "dep file found",
+              "weight": 1.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "maint.has_tests",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "test file found",
+              "weight": 1,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            },
+            {
+              "id": "maint.has_changelog",
+              "type": "rule",
+              "status": "pass",
+              "evidence": "changelog found",
+              "weight": 0.5,
+              "ratio": 1.0,
+              "evidenceSource": "doc_check",
+              "confidencePolicy": "high"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "bonus": 4.76,
+  "bonusChecks": [
+    {
+      "id": "portability",
+      "max": 5,
+      "score": 4.76,
+      "llmCoverage": {
+        "evaluated": 1,
+        "total": 1
+      },
+      "checks": [
+        {
+          "id": "port.spec_agnostic_frontmatter",
+          "type": "rule",
+          "status": "pass",
+          "evidence": "clean",
+          "weight": 2,
+          "ratio": 1.0,
+          "evidenceSource": "doc_check",
+          "confidencePolicy": "high"
+        },
+        {
+          "id": "port.no_hardcoded_tools",
+          "type": "llm",
+          "status": "pass",
+          "evidence": "## Bonus / Portability 明确说不硬编码任何模型名或厂商工具，使用'任意 file-read / 任意 markdown-render'等能力描述。frontmatter 仅用通用字段。",
+          "weight": 3,
+          "ratio": 0.92,
+          "evidenceSource": "doc_check",
+          "confidencePolicy": "high",
+          "fix": "可补一行明确兼容矩阵：Claude Code / OpenClaw / Cursor / Hermes 全可用。",
+          "confidence": 0.88
+        }
+      ]
+    }
+  ],
+  "llmComplete": true,
+  "suggestions": [],
+  "llmMeta": {
+    "value_type": "decision_support",
+    "value_type_reason": "本 skill 帮 solopreneur 在「对标该选谁」这一关键决策点上给出多维评分+真实证据，属于决策辅助型而非纯生产力工具。"
+  },
+  "deepReviewCertificate": {
+    "status": "verified",
+    "workflow": "agent-prompt -> agent-llm-results -> official-cli-merge",
+    "source": "official SkillLens CLI",
+    "engine": "skilllens-python-cli",
+    "engineVersion": "0.2.0",
+    "rubricHash": "5e5a124282f8cf33",
+    "llmResultsHash": "efd2bd725854468b",
+    "llmComplete": true
+  }
+}

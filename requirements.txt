@@ -1,0 +1,9 @@
+# Benchmark Radar - 仅使用 Python 3.10+ 标准库
+# 无外部依赖，无密钥要求
+
+# 可选依赖（仅当用户启用大数据源接入时）：
+# - 调用 agent-reach-pro skill 时由该 skill 自行管理依赖
+# - WebFetch / WebSearch 由调用方 (Claude Code) 提供
+
+# 开发/测试时建议：
+# pytest>=7.0.0  # 运行 tests/ 下回归测试

@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "value_type": "decision_support",
+    "value_type_reason": "本 skill 帮 solopreneur 在「对标该选谁」这一关键决策点上给出多维评分+真实证据，属于决策辅助型而非纯生产力工具。"
+  },
+  "results": {
+    "biz.target_users.specific": {
+      "ratio": 0.92,
+      "evidence": "## Target users 章节列出 4 类具体角色（solopreneur / 副业探索者 / 内容创作者 / indie hacker），并明确写了'不适合谁'。可直接识别。",
+      "fix": "可为每类用户补一句典型痛点场景，如'内容创作者：流量起来了但变现路径不清'。",
+      "confidence": 0.9
+    },
+    "biz.problem_reality.is_real": {
+      "ratio": 0.9,
+      "evidence": "## Why this skill 与方法论部分明确给出 3 个真实失败模式：粉丝多但不赚钱、颗粒度不到细节、AI 反过来问'你的兴趣是什么'。这是 indie hacker / 副业圈反复验证的真痛点。",
+      "fix": "可补 1 个真实用户故事或社区抱怨截图作为外部证据。",
+      "confidence": 0.88
+    },
+    "biz.value_articulation.matched_to_type": {
+      "ratio": 0.9,
+      "evidence": "决策辅助型 skill，价值主张'唯一强制三件事（拒绝自我陷阱 + 强制价格证据 + 强制 5R 颗粒度）'清晰具体。",
+      "fix": "可加量化对比：'用了之后用户做对标决策的时间从 N 小时减到 M 分钟'。",
+      "confidence": 0.85
+    },
+    "biz.usage_frequency.estimable": {
+      "ratio": 0.92,
+      "evidence": "## When to use 章节明确分层：高频（每次新业务前）/ 中频（每月复盘）/ 低频（被问时），并说明可累积成个人对标库。",
+      "fix": "可加'对标库导出/导入'机制让多次调用更明确累积。",
+      "confidence": 0.88
+    },
+    "biz.moat_potential.compounding": {
+      "ratio": 0.85,
+      "evidence": "每次调用产出可存档的 HTML 报告（不是一次性输出消失），多次累积形成个人对标库。CLONE/5R 框架本身是可识别的'品牌口吻'。",
+      "fix": "可设计'让第 100 次调用比第 1 次知道更多'的中间产物持久化机制（如把用户已采纳过的对标标记 adopted）。",
+      "confidence": 0.8
+    },
+    "market.differentiation.clear": {
+      "ratio": 0.93,
+      "evidence": "## Why this skill 章节用表格对比 4 个真实同类工具（ChatGPT 直接问 / ai-side-hustle-finder / ProductHunt Business Idea Generator / dbs-benchmark），并给出一句话差异化。",
+      "fix": "可加 1 张 demo gif 或 before/after 截图直观展示差异。",
+      "confidence": 0.9
+    },
+    "market.scope_focus.disciplined": {
+      "ratio": 0.95,
+      "evidence": "整个 skill 只做'找对标'一件事，不涉及商业模式生成、选品、内容创作、执行陪跑。description 中也只有'找对标'相关动词。",
+      "fix": "无明显改进点；scope 已极度聚焦。",
+      "confidence": 0.92
+    },
+    "market.llm_replaceable.has_edge": {
+      "ratio": 0.92,
+      "evidence": "远超裸 LLM：自创 CLONE 五道闸门 + 5R 复刻矩阵 + 15+ 预置案例库 + 多平台实时数据源调用方案 + 强制证据链规则。裸 LLM 给出的对标全是'粉丝多但不赚钱'。",
+      "fix": "可加'同一 query 在裸 ChatGPT vs 本 skill'的输出对比示例。",
+      "confidence": 0.88
+    },
+    "market.existing_alternatives.surveyed": {
+      "ratio": 0.95,
+      "evidence": "## Why this skill 表格点名 4 个真实竞品（含具体名字 / URL / 不足），覆盖国内 + 海外 + 通用 LLM + 同类方法论 skill 全谱。",
+      "fix": "无明显改进；竞品调研意识充分。",
+      "confidence": 0.9
+    },
+    "cost.external_dependencies.weight_assessed": {
+      "ratio": 0.92,
+      "evidence": "## Dependencies 表格明确列出仅 Python 3.10+ 标准库 + 可选 agent-reach-pro skill，无外部付费 API、无密钥要求。所有数据本地处理。",
+      "fix": "可加'最差情景成本估算：每次调用 < $0.01'一句兜底说明。",
+      "confidence": 0.9
+    },
+    "cost.cache_friendliness.idempotent_inputs": {
+      "ratio": 0.92,
+      "evidence": "## Inputs 章节明确写出'缓存键 = sha256(query + platform + profit_target_wan)'，并指出 top 字段不影响哈希。重复查询命中缓存说明清楚。",
+      "fix": "可加 cache TTL 建议（实际已在 ## Determinism 中给出 24h）。",
+      "confidence": 0.88
+    },
+    "rel.task_model_fit.in_zone": {
+      "ratio": 0.9,
+      "evidence": "核心任务是结构化提取 + 模板匹配 + 报告生成（LLM 稳定区）。CLONE 评分按预先打分的字段读取（脚本兜底），无需 LLM 实时算精确数值。",
+      "fix": "可加 ## Task-Model Fit 小节明确每步'谁来做'（脚本 vs LLM）。",
+      "confidence": 0.85
+    },
+    "rel.output_validation.enforced": {
+      "ratio": 0.88,
+      "evidence": "## Workflow 第 6 步显式'校验输出：检查 HTML 文件已生成、候选数 ≥ 1、每个候选 5R 字段非空，失败按 ## Failure 处理'。",
+      "fix": "可在 scripts/ 加一个 validate.py 用 jsonschema 做严格校验。",
+      "confidence": 0.82
+    },
+    "rel.idempotency.discussed": {
+      "ratio": 0.92,
+      "evidence": "## Determinism 章节专门讨论：明确区分'幂等步骤（脚本/规则）'vs'抖动步骤（实时抓取）'，并指出 80% 输出来自确定性脚本。",
+      "fix": "可在涉及 LLM 推理的环节明确建议 temperature=0。",
+      "confidence": 0.88
+    },
+    "rel.failure_path.explicit": {
+      "ratio": 0.95,
+      "evidence": "## Failure 章节用表格列出 5 种失败类型 + 具体处理（rejected JSON / 自动降级 / 静态兜底 / exit 1 / error 提示）。",
+      "fix": "无明显改进；失败路径覆盖度好。",
+      "confidence": 0.9
+    },
+    "rel.edge_cases.discussed": {
+      "ratio": 0.88,
+      "evidence": "## Known limitations 列出 3 条已知边界（案例库覆盖度、价格估算精度、多平台抓取依赖），并说明应对方式。",
+      "fix": "可补'超长 query / 空 query / 多语种混排 query'等纯输入边界场景。",
+      "confidence": 0.85
+    },
+    "disc.keyword_coverage": {
+      "ratio": 0.95,
+      "evidence": "description 含 10+ 触发关键词，中英双语全覆盖：找对标 / benchmark / 我想模仿 / 该模仿谁 / 市场上谁在做 X / find competitor / similar projects / 对标分析 / 抄谁 / who should I clone。",
+      "fix": "无明显改进；keyword 覆盖广而精。",
+      "confidence": 0.9
+    },
+    "act.steps_atomic": {
+      "ratio": 0.92,
+      "evidence": "## Workflow 6 步，每步一个动词一件事：审查输入 / 匹配候选 / CLONE 过滤 / 5R 补全 / 生成报告 / 校验输出。",
+      "fix": "无明显改进；原子化做得好。",
+      "confidence": 0.9
+    },
+    "act.io_explicit": {
+      "ratio": 0.95,
+      "evidence": "## Inputs 给出字段表（含必填/可选/影响输出/缓存键），## Outputs 给出完整 JSON schema。IO 极度明确。",
+      "fix": "无明显改进；IO 透明度顶级。",
+      "confidence": 0.92
+    },
+    "act.no_ambiguity": {
+      "ratio": 0.88,
+      "evidence": "关键步骤使用确定语气：'立即返回'、'淘汰'、'按 ## Failure 处理'、'重试 3 次'。少用'也许 / 可能'。",
+      "fix": "可把'建议设 cache TTL = 24h'改成默认值 '24h'。",
+      "confidence": 0.85
+    },
+    "safe.least_privilege": {
+      "ratio": 0.95,
+      "evidence": "明确仅使用 Python 标准库 + 可选 agent-reach-pro，无外部 API、无密钥、无 telemetry。权限最小化做到极致。",
+      "fix": "无明显改进。",
+      "confidence": 0.92
+    },
+    "safe.privacy": {
+      "ratio": 0.95,
+      "evidence": "## Privacy 章节明确 4 条：用户输入仅本地处理 / 不收集不存储不上传 / 无 telemetry 无埋点 / HTML 报告生成在本地路径。",
+      "fix": "无明显改进；隐私处理表述充分。",
+      "confidence": 0.92
+    },
+    "port.no_hardcoded_tools": {
+      "ratio": 0.92,
+      "evidence": "## Bonus / Portability 明确说不硬编码任何模型名或厂商工具，使用'任意 file-read / 任意 markdown-render'等能力描述。frontmatter 仅用通用字段。",
+      "fix": "可补一行明确兼容矩阵：Claude Code / OpenClaw / Cursor / Hermes 全可用。",
+      "confidence": 0.88
+    }
+  }
+}
