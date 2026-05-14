@@ -250,7 +250,7 @@
               "id": "cost.context_budget.skill_md_size",
               "type": "rule",
               "status": "pass",
-              "evidence": "5094 chars (~1698 tokens)",
+              "evidence": "5592 chars (~1864 tokens)",
               "weight": 4,
               "ratio": 1.0,
               "evidenceSource": "doc_check",

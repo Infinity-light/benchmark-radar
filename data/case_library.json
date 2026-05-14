@@ -3,11 +3,30 @@
     "name": "dontbesilent · 商业诊断付费咨询",
     "category": "知识付费 / 付费咨询",
     "business": "微信 1v1 商业模式诊断 + 知识星球付费社群",
-    "tags": ["付费咨询", "商业诊断", "个人IP", "知识付费", "私域", "高客单", "creator economy", "solopreneur"],
-    "platforms": ["xiaohongshu", "wechat", "knowledge_planet"],
+    "tags": [
+      "付费咨询",
+      "商业诊断",
+      "个人IP",
+      "知识付费",
+      "私域",
+      "高客单",
+      "creator economy",
+      "solopreneur"
+    ],
+    "platforms": [
+      "xiaohongshu",
+      "wechat",
+      "knowledge_planet"
+    ],
     "monthly_profit_wan_low": 5,
     "monthly_profit_wan_high": 30,
-    "clone": {"cash": 9, "logic": 9, "operability": 7, "no_self": 10, "evidence": 9},
+    "clone": {
+      "cash": 9,
+      "logic": 9,
+      "operability": 7,
+      "no_self": 10,
+      "evidence": 9
+    },
     "rate": {
       "main_price": "1v1 咨询 ¥1000-3000/小时",
       "price_ladder": "免费内容 → 知识星球 ¥99-299/年 → 1v1 咨询 ¥1000+/h",
@@ -31,9 +50,22 @@
     "reality": {
       "snapshot": "小红书 10万+粉丝，知识星球付费会员 1000+，月咨询档期常被订满",
       "links": [
-        {"label": "小红书主账号", "url": "https://www.xiaohongshu.com/user/profile/dontbesilent"},
-        {"label": "公众号「不要沉默」", "url": "https://mp.weixin.qq.com/"},
-        {"label": "DBS Skill 工具箱", "url": "https://github.com/dontbesilent"}
+        {
+          "label": "Google 搜「dontbesilent」最新数据",
+          "url": "https://www.google.com/search?q=dontbesilent%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "小红书主账号",
+          "url": "https://www.xiaohongshu.com/user/profile/dontbesilent"
+        },
+        {
+          "label": "在 xiaohongshu 搜索 'dontbesilent'",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=dontbesilent"
+        },
+        {
+          "label": "DBS Skill 工具箱",
+          "url": "https://github.com/dontbesilent"
+        }
       ]
     },
     "actions": {
@@ -47,11 +79,28 @@
     "name": "半佛仙人 · B站长视频财经科普",
     "category": "长视频自媒体",
     "business": "B站长视频 + 微信公众号 + 出书 + 商业广告",
-    "tags": ["B站", "长视频", "财经", "科普", "自媒体", "MCN", "广告变现"],
-    "platforms": ["bilibili", "wechat"],
+    "tags": [
+      "B站",
+      "长视频",
+      "财经",
+      "科普",
+      "自媒体",
+      "MCN",
+      "广告变现"
+    ],
+    "platforms": [
+      "bilibili",
+      "wechat"
+    ],
     "monthly_profit_wan_low": 50,
     "monthly_profit_wan_high": 200,
-    "clone": {"cash": 10, "logic": 8, "operability": 4, "no_self": 10, "evidence": 9},
+    "clone": {
+      "cash": 10,
+      "logic": 8,
+      "operability": 4,
+      "no_self": 10,
+      "evidence": 9
+    },
     "rate": {
       "main_price": "B站充电 ¥5/月 + 视频中插广告 ¥50-200万/条",
       "price_ladder": "免费视频 → 充电 ¥5 → 出书 ¥59 → 商业讲座/咨询",
@@ -75,9 +124,22 @@
     "reality": {
       "snapshot": "B站 800万+粉丝，平均播放 200-500万，公众号 100万+",
       "links": [
-        {"label": "B站主页", "url": "https://space.bilibili.com/9458053"},
-        {"label": "公众号「半佛仙人」", "url": "https://mp.weixin.qq.com/"},
-        {"label": "微博", "url": "https://weibo.com/u/banfo"}
+        {
+          "label": "Google 搜「半佛仙人」最新数据",
+          "url": "https://www.google.com/search?q=%E5%8D%8A%E4%BD%9B%E4%BB%99%E4%BA%BA%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "B站主页",
+          "url": "https://space.bilibili.com/9458053"
+        },
+        {
+          "label": "在 bilibili 搜索 '半佛仙人'",
+          "url": "https://search.bilibili.com/all?keyword=%E5%8D%8A%E4%BD%9B%E4%BB%99%E4%BA%BA"
+        },
+        {
+          "label": "微博",
+          "url": "https://weibo.com/u/banfo"
+        }
       ]
     },
     "actions": {
@@ -91,11 +153,29 @@
     "name": "小K不刺 · 小红书 AI 工具教学",
     "category": "AI 工具教学自媒体",
     "business": "小红书内容引流 → 知识星球付费圈 + 1v1 工具配置",
-    "tags": ["小红书", "AI工具", "教学", "知识付费", "副业", "ChatGPT", "Claude"],
-    "platforms": ["xiaohongshu", "knowledge_planet", "wechat"],
+    "tags": [
+      "小红书",
+      "AI工具",
+      "教学",
+      "知识付费",
+      "副业",
+      "ChatGPT",
+      "Claude"
+    ],
+    "platforms": [
+      "xiaohongshu",
+      "knowledge_planet",
+      "wechat"
+    ],
     "monthly_profit_wan_low": 3,
     "monthly_profit_wan_high": 15,
-    "clone": {"cash": 8, "logic": 9, "operability": 9, "no_self": 10, "evidence": 8},
+    "clone": {
+      "cash": 8,
+      "logic": 9,
+      "operability": 9,
+      "no_self": 10,
+      "evidence": 8
+    },
     "rate": {
       "main_price": "知识星球 ¥99-199/年 + 单课 ¥99-299",
       "price_ladder": "免费图文 → 入门课 ¥99 → 知识星球年订 ¥199 → 1v1 配置 ¥999",
@@ -119,9 +199,22 @@
     "reality": {
       "snapshot": "小红书 5-15 万粉，知识星球 500-2000 付费会员",
       "links": [
-        {"label": "小红书代表账号搜索", "url": "https://www.xiaohongshu.com/search_result?keyword=AI%E5%B7%A5%E5%85%B7"},
-        {"label": "知识星球 AI 工具圈", "url": "https://t.zsxq.com/"},
-        {"label": "代表 AI 教程合集", "url": "https://www.xiaohongshu.com/explore"}
+        {
+          "label": "Google 搜「小K不刺」最新数据",
+          "url": "https://www.google.com/search?q=%E5%B0%8FK%E4%B8%8D%E5%88%BA%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "小红书代表账号搜索",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=AI%E5%B7%A5%E5%85%B7"
+        },
+        {
+          "label": "在 xiaohongshu 搜索 '小K不刺'",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%B0%8FK%E4%B8%8D%E5%88%BA"
+        },
+        {
+          "label": "代表 AI 教程合集",
+          "url": "https://www.xiaohongshu.com/explore"
+        }
       ]
     },
     "actions": {
@@ -135,11 +228,27 @@
     "name": "蛋解创业 · 创业知识星球",
     "category": "创业内容付费社群",
     "business": "公众号 + 知识星球年费会员",
-    "tags": ["创业", "公众号", "知识星球", "年费会员", "私域", "知识付费"],
-    "platforms": ["wechat", "knowledge_planet"],
+    "tags": [
+      "创业",
+      "公众号",
+      "知识星球",
+      "年费会员",
+      "私域",
+      "知识付费"
+    ],
+    "platforms": [
+      "wechat",
+      "knowledge_planet"
+    ],
     "monthly_profit_wan_low": 10,
     "monthly_profit_wan_high": 50,
-    "clone": {"cash": 9, "logic": 9, "operability": 6, "no_self": 10, "evidence": 8},
+    "clone": {
+      "cash": 9,
+      "logic": 9,
+      "operability": 6,
+      "no_self": 10,
+      "evidence": 8
+    },
     "rate": {
       "main_price": "知识星球 ¥299-999/年",
       "price_ladder": "公众号免费 → 知识星球 ¥299 → VIP 顾问 ¥999+",
@@ -163,9 +272,22 @@
     "reality": {
       "snapshot": "公众号 30-50 万粉，知识星球付费 5000+",
       "links": [
-        {"label": "公众号「蛋解创业」", "url": "https://mp.weixin.qq.com/"},
-        {"label": "知识星球", "url": "https://t.zsxq.com/"},
-        {"label": "B站同步", "url": "https://space.bilibili.com/"}
+        {
+          "label": "Google 搜「蛋解创业」最新数据",
+          "url": "https://www.google.com/search?q=%E8%9B%8B%E8%A7%A3%E5%88%9B%E4%B8%9A%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "在 wechat 搜索 '蛋解创业'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E8%9B%8B%E8%A7%A3%E5%88%9B%E4%B8%9A"
+        },
+        {
+          "label": "在 wechat 搜索 '蛋解创业'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E8%9B%8B%E8%A7%A3%E5%88%9B%E4%B8%9A"
+        },
+        {
+          "label": "在 wechat 搜索 '蛋解创业'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E8%9B%8B%E8%A7%A3%E5%88%9B%E4%B8%9A"
+        }
       ]
     },
     "actions": {
@@ -179,11 +301,27 @@
     "name": "曹将 · 公众号 PPT 知识 IP",
     "category": "知识付费个人 IP",
     "business": "公众号 + 在线课 + 出书 + 企业内训",
-    "tags": ["PPT", "知识付费", "公众号", "个人IP", "课程", "出书", "企业培训"],
-    "platforms": ["wechat"],
+    "tags": [
+      "PPT",
+      "知识付费",
+      "公众号",
+      "个人IP",
+      "课程",
+      "出书",
+      "企业培训"
+    ],
+    "platforms": [
+      "wechat"
+    ],
     "monthly_profit_wan_low": 8,
     "monthly_profit_wan_high": 40,
-    "clone": {"cash": 9, "logic": 9, "operability": 7, "no_self": 10, "evidence": 9},
+    "clone": {
+      "cash": 9,
+      "logic": 9,
+      "operability": 7,
+      "no_self": 10,
+      "evidence": 9
+    },
     "rate": {
       "main_price": "在线课 ¥199-599 + 1v1 PPT 美化 ¥500/页",
       "price_ladder": "免费公众号 → 模板 ¥9.9 → 在线课 ¥299 → 出书 ¥69 → 企业内训 ¥3-10万",
@@ -207,9 +345,22 @@
     "reality": {
       "snapshot": "公众号 100万+粉，出版多本 PPT 畅销书",
       "links": [
-        {"label": "公众号「曹将」", "url": "https://mp.weixin.qq.com/"},
-        {"label": "出版书籍京东页", "url": "https://search.jd.com/Search?keyword=%E6%9B%B9%E5%B0%86"},
-        {"label": "B站账号", "url": "https://space.bilibili.com/"}
+        {
+          "label": "Google 搜「曹将」最新数据",
+          "url": "https://www.google.com/search?q=%E6%9B%B9%E5%B0%86%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "在 wechat 搜索 '曹将'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E6%9B%B9%E5%B0%86"
+        },
+        {
+          "label": "出版书籍京东页",
+          "url": "https://search.jd.com/Search?keyword=%E6%9B%B9%E5%B0%86"
+        },
+        {
+          "label": "在 wechat 搜索 '曹将'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E6%9B%B9%E5%B0%86"
+        }
       ]
     },
     "actions": {
@@ -223,11 +374,27 @@
     "name": "村长说 · 公众号副业指南",
     "category": "副业知识付费",
     "business": "公众号 + 知识星球 + 私域社群",
-    "tags": ["副业", "公众号", "知识星球", "私域", "下沉市场", "创业"],
-    "platforms": ["wechat", "knowledge_planet"],
+    "tags": [
+      "副业",
+      "公众号",
+      "知识星球",
+      "私域",
+      "下沉市场",
+      "创业"
+    ],
+    "platforms": [
+      "wechat",
+      "knowledge_planet"
+    ],
     "monthly_profit_wan_low": 5,
     "monthly_profit_wan_high": 20,
-    "clone": {"cash": 8, "logic": 9, "operability": 8, "no_self": 10, "evidence": 7},
+    "clone": {
+      "cash": 8,
+      "logic": 9,
+      "operability": 8,
+      "no_self": 10,
+      "evidence": 7
+    },
     "rate": {
       "main_price": "知识星球 ¥299/年",
       "price_ladder": "免费公众号 → 知识星球 ¥299 → 1v1 咨询 ¥999",
@@ -251,9 +418,22 @@
     "reality": {
       "snapshot": "公众号 10-30 万粉，知识星球 2000-5000 付费",
       "links": [
-        {"label": "公众号搜索「村长说」", "url": "https://mp.weixin.qq.com/"},
-        {"label": "知识星球", "url": "https://t.zsxq.com/"},
-        {"label": "代表副业指南文章", "url": "https://mp.weixin.qq.com/"}
+        {
+          "label": "Google 搜「村长说」最新数据",
+          "url": "https://www.google.com/search?q=%E6%9D%91%E9%95%BF%E8%AF%B4%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "在 wechat 搜索 '村长说'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E6%9D%91%E9%95%BF%E8%AF%B4"
+        },
+        {
+          "label": "在 wechat 搜索 '村长说'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E6%9D%91%E9%95%BF%E8%AF%B4"
+        },
+        {
+          "label": "在 wechat 搜索 '村长说'",
+          "url": "https://weixin.sogou.com/weixin?type=2&query=%E6%9D%91%E9%95%BF%E8%AF%B4"
+        }
       ]
     },
     "actions": {
@@ -267,11 +447,29 @@
     "name": "Carrd · 单人独立 SaaS",
     "category": "独立产品 / Indie SaaS",
     "business": "极简单页网站搭建工具，订阅制",
-    "tags": ["indie hacker", "SaaS", "no-code", "单人创业", "订阅", "海外", "解决方案"],
-    "platforms": ["product_hunt", "indie_hackers", "twitter"],
+    "tags": [
+      "indie hacker",
+      "SaaS",
+      "no-code",
+      "单人创业",
+      "订阅",
+      "海外",
+      "解决方案"
+    ],
+    "platforms": [
+      "product_hunt",
+      "indie_hackers",
+      "twitter"
+    ],
     "monthly_profit_wan_low": 30,
     "monthly_profit_wan_high": 80,
-    "clone": {"cash": 10, "logic": 10, "operability": 5, "no_self": 10, "evidence": 10},
+    "clone": {
+      "cash": 10,
+      "logic": 10,
+      "operability": 5,
+      "no_self": 10,
+      "evidence": 10
+    },
     "rate": {
       "main_price": "Pro $19/年 + Pro Plus $49/年",
       "price_ladder": "免费版 → Pro $19/年 → Pro Plus $49/年 → Pro Standard $9/年",
@@ -295,9 +493,22 @@
     "reality": {
       "snapshot": "MRR ~$70k+/月（公开数据），单人运营 7+ 年",
       "links": [
-        {"label": "Carrd 官网", "url": "https://carrd.co"},
-        {"label": "IndieHackers profile", "url": "https://www.indiehackers.com/product/carrd"},
-        {"label": "创始人 Twitter @ajlkn", "url": "https://twitter.com/ajlkn"}
+        {
+          "label": "Google 搜「Carrd」最新数据",
+          "url": "https://www.google.com/search?q=Carrd%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "Carrd 官网",
+          "url": "https://carrd.co"
+        },
+        {
+          "label": "IndieHackers profile",
+          "url": "https://www.indiehackers.com/product/carrd"
+        },
+        {
+          "label": "创始人 Twitter @ajlkn",
+          "url": "https://twitter.com/ajlkn"
+        }
       ]
     },
     "actions": {
@@ -311,11 +522,29 @@
     "name": "屠龙的胭脂井 · 小红书科技职场内容",
     "category": "职场科技内容自媒体",
     "business": "小红书 + 知乎 + 微信社群",
-    "tags": ["小红书", "职场", "科技", "硅谷", "海外", "知识IP", "知识付费"],
-    "platforms": ["xiaohongshu", "zhihu", "wechat"],
+    "tags": [
+      "小红书",
+      "职场",
+      "科技",
+      "硅谷",
+      "海外",
+      "知识IP",
+      "知识付费"
+    ],
+    "platforms": [
+      "xiaohongshu",
+      "zhihu",
+      "wechat"
+    ],
     "monthly_profit_wan_low": 5,
     "monthly_profit_wan_high": 25,
-    "clone": {"cash": 8, "logic": 8, "operability": 6, "no_self": 10, "evidence": 8},
+    "clone": {
+      "cash": 8,
+      "logic": 8,
+      "operability": 6,
+      "no_self": 10,
+      "evidence": 8
+    },
     "rate": {
       "main_price": "知识星球 ¥499/年 + 1v1 职业咨询 ¥1500/h",
       "price_ladder": "免费小红书 → 星球 ¥499 → 1v1 ¥1500",
@@ -339,9 +568,22 @@
     "reality": {
       "snapshot": "小红书 30万+ 粉，知乎大V，知识付费用户 1000+",
       "links": [
-        {"label": "小红书账号", "url": "https://www.xiaohongshu.com/user/profile/"},
-        {"label": "知乎账号", "url": "https://www.zhihu.com/people/"},
-        {"label": "代表文章合集", "url": "https://www.zhihu.com/"}
+        {
+          "label": "Google 搜「屠龙的胭脂井」最新数据",
+          "url": "https://www.google.com/search?q=%E5%B1%A0%E9%BE%99%E7%9A%84%E8%83%AD%E8%84%82%E4%BA%95%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "在 xiaohongshu 搜索 '屠龙的胭脂井'",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%B1%A0%E9%BE%99%E7%9A%84%E8%83%AD%E8%84%82%E4%BA%95"
+        },
+        {
+          "label": "知乎账号",
+          "url": "https://www.zhihu.com/people/"
+        },
+        {
+          "label": "代表文章合集",
+          "url": "https://www.zhihu.com/"
+        }
       ]
     },
     "actions": {
@@ -355,11 +597,29 @@
     "name": "Notion 模板付费下载 · Marie Poulin 模式",
     "category": "数字产品 / 模板付费",
     "business": "免费 Notion 模板引流 + 付费高级模板 + 训练营",
-    "tags": ["Notion", "数字模板", "付费下载", "海外", "indie", "templates", "Gumroad"],
-    "platforms": ["gumroad", "twitter", "notion_official"],
+    "tags": [
+      "Notion",
+      "数字模板",
+      "付费下载",
+      "海外",
+      "indie",
+      "templates",
+      "Gumroad"
+    ],
+    "platforms": [
+      "gumroad",
+      "twitter",
+      "notion_official"
+    ],
     "monthly_profit_wan_low": 3,
     "monthly_profit_wan_high": 15,
-    "clone": {"cash": 8, "logic": 9, "operability": 8, "no_self": 10, "evidence": 9},
+    "clone": {
+      "cash": 8,
+      "logic": 9,
+      "operability": 8,
+      "no_self": 10,
+      "evidence": 9
+    },
     "rate": {
       "main_price": "高级模板 $29-99 + 训练营 $599-2999",
       "price_ladder": "免费模板 → 付费模板 $29 → 模板包 $99 → 训练营 $2999",
@@ -383,9 +643,22 @@
     "reality": {
       "snapshot": "Twitter 30k+ 粉，Gumroad 累计销售 $500k+",
       "links": [
-        {"label": "Marie Poulin Twitter", "url": "https://twitter.com/mariepoulin"},
-        {"label": "Notion Mastery 网站", "url": "https://www.notionmastery.com/"},
-        {"label": "Gumroad 商品页", "url": "https://gumroad.com/discover?query=notion"}
+        {
+          "label": "Google 搜「Notion 模板付费下载」最新数据",
+          "url": "https://www.google.com/search?q=Notion%20%E6%A8%A1%E6%9D%BF%E4%BB%98%E8%B4%B9%E4%B8%8B%E8%BD%BD%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "Marie Poulin Twitter",
+          "url": "https://twitter.com/mariepoulin"
+        },
+        {
+          "label": "Notion Mastery 网站",
+          "url": "https://www.notionmastery.com/"
+        },
+        {
+          "label": "Gumroad 商品页",
+          "url": "https://gumroad.com/discover?query=notion"
+        }
       ]
     },
     "actions": {
@@ -399,11 +672,28 @@
     "name": "B站 AI 教学 UP · 林粒粒呀模式",
     "category": "技术教学 UP 主",
     "business": "B站免费教程 → 训练营 / 知识星球 / 1v1 私教",
-    "tags": ["B站", "AI教学", "Python", "数据分析", "知识付费", "训练营"],
-    "platforms": ["bilibili", "wechat", "knowledge_planet"],
+    "tags": [
+      "B站",
+      "AI教学",
+      "Python",
+      "数据分析",
+      "知识付费",
+      "训练营"
+    ],
+    "platforms": [
+      "bilibili",
+      "wechat",
+      "knowledge_planet"
+    ],
     "monthly_profit_wan_low": 5,
     "monthly_profit_wan_high": 30,
-    "clone": {"cash": 9, "logic": 9, "operability": 7, "no_self": 10, "evidence": 8},
+    "clone": {
+      "cash": 9,
+      "logic": 9,
+      "operability": 7,
+      "no_self": 10,
+      "evidence": 8
+    },
     "rate": {
       "main_price": "训练营 ¥1999-3999 + 知识星球 ¥299/年",
       "price_ladder": "免费视频 → 知识星球 ¥299 → 训练营 ¥1999 → 1v1 ¥1999/h",
@@ -427,9 +717,22 @@
     "reality": {
       "snapshot": "B站 30-100 万粉，训练营每期 200-500 人",
       "links": [
-        {"label": "B站搜索「Python 教学 UP 主」", "url": "https://search.bilibili.com/all?keyword=python%E6%95%99%E5%AD%A6"},
-        {"label": "代表 UP「林粒粒呀」", "url": "https://space.bilibili.com/"},
-        {"label": "知识星球", "url": "https://t.zsxq.com/"}
+        {
+          "label": "Google 搜「B站 AI 教学 UP」最新数据",
+          "url": "https://www.google.com/search?q=B%E7%AB%99%20AI%20%E6%95%99%E5%AD%A6%20UP%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "B站搜索「Python 教学 UP 主」",
+          "url": "https://search.bilibili.com/all?keyword=python%E6%95%99%E5%AD%A6"
+        },
+        {
+          "label": "在 bilibili 搜索 'B站 AI 教学 UP'",
+          "url": "https://search.bilibili.com/all?keyword=B%E7%AB%99%20AI%20%E6%95%99%E5%AD%A6%20UP"
+        },
+        {
+          "label": "在 bilibili 搜索 'B站 AI 教学 UP'",
+          "url": "https://search.bilibili.com/all?keyword=B%E7%AB%99%20AI%20%E6%95%99%E5%AD%A6%20UP"
+        }
       ]
     },
     "actions": {
@@ -443,11 +746,27 @@
     "name": "闲鱼数字模板倒卖 · 资料类",
     "category": "无货源 / 信息差变现",
     "business": "搜集免费资料 → 整理打包 → 闲鱼挂售 ¥5-50",
-    "tags": ["闲鱼", "无货源", "数字产品", "信息差", "副业", "低门槛"],
-    "platforms": ["xianyu", "taobao"],
+    "tags": [
+      "闲鱼",
+      "无货源",
+      "数字产品",
+      "信息差",
+      "副业",
+      "低门槛"
+    ],
+    "platforms": [
+      "xianyu",
+      "taobao"
+    ],
     "monthly_profit_wan_low": 0.5,
     "monthly_profit_wan_high": 5,
-    "clone": {"cash": 5, "logic": 9, "operability": 10, "no_self": 10, "evidence": 7},
+    "clone": {
+      "cash": 5,
+      "logic": 9,
+      "operability": 10,
+      "no_self": 10,
+      "evidence": 7
+    },
     "rate": {
       "main_price": "¥5-50 / 份",
       "price_ladder": "单份 ¥9.9 → 合集包 ¥29 → 全套 ¥99",
@@ -471,9 +790,22 @@
     "reality": {
       "snapshot": "成熟卖家月销 200-500 单，毛利 80%+",
       "links": [
-        {"label": "闲鱼 APP 搜索「PPT 模板」", "url": "https://2.taobao.com/"},
-        {"label": "知乎闲鱼无货源教程", "url": "https://www.zhihu.com/search?q=%E9%97%B2%E9%B1%BC%E6%97%A0%E8%B4%A7%E6%BA%90"},
-        {"label": "代表卖家页（搜索得到）", "url": "https://www.goofish.com/"}
+        {
+          "label": "Google 搜「闲鱼数字模板倒卖」最新数据",
+          "url": "https://www.google.com/search?q=%E9%97%B2%E9%B1%BC%E6%95%B0%E5%AD%97%E6%A8%A1%E6%9D%BF%E5%80%92%E5%8D%96%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "在 xianyu 搜索 '闲鱼数字模板倒卖'",
+          "url": "https://2.taobao.com/search/items.html?q=%E9%97%B2%E9%B1%BC%E6%95%B0%E5%AD%97%E6%A8%A1%E6%9D%BF%E5%80%92%E5%8D%96"
+        },
+        {
+          "label": "知乎闲鱼无货源教程",
+          "url": "https://www.zhihu.com/search?q=%E9%97%B2%E9%B1%BC%E6%97%A0%E8%B4%A7%E6%BA%90"
+        },
+        {
+          "label": "代表卖家页（搜索得到）",
+          "url": "https://www.goofish.com/"
+        }
       ]
     },
     "actions": {
@@ -487,11 +819,27 @@
     "name": "AI 写真 · 妙鸭模式个人版",
     "category": "AI 形象照工作室",
     "business": "小红书种草 → 微信定制 AI 写真 ¥99-499",
-    "tags": ["AI写真", "小红书", "副业", "AI工具", "高客单", "图像生成"],
-    "platforms": ["xiaohongshu", "wechat"],
+    "tags": [
+      "AI写真",
+      "小红书",
+      "副业",
+      "AI工具",
+      "高客单",
+      "图像生成"
+    ],
+    "platforms": [
+      "xiaohongshu",
+      "wechat"
+    ],
     "monthly_profit_wan_low": 3,
     "monthly_profit_wan_high": 12,
-    "clone": {"cash": 8, "logic": 9, "operability": 9, "no_self": 10, "evidence": 7},
+    "clone": {
+      "cash": 8,
+      "logic": 9,
+      "operability": 9,
+      "no_self": 10,
+      "evidence": 7
+    },
     "rate": {
       "main_price": "¥99-499 / 套",
       "price_ladder": "试拍 ¥9.9 → 单风格 ¥99 → 全套 ¥499 → 商务定制 ¥999",
@@ -515,9 +863,22 @@
     "reality": {
       "snapshot": "小红书 1-5 万粉，单月 100-300 单不等",
       "links": [
-        {"label": "小红书搜「AI 写真」", "url": "https://www.xiaohongshu.com/search_result?keyword=AI%E5%86%99%E7%9C%9F"},
-        {"label": "妙鸭官方", "url": "https://miaoya.art/"},
-        {"label": "知乎教程合集", "url": "https://www.zhihu.com/search?q=AI%E5%86%99%E7%9C%9F%E5%89%AF%E4%B8%9A"}
+        {
+          "label": "Google 搜「AI 写真」最新数据",
+          "url": "https://www.google.com/search?q=AI%20%E5%86%99%E7%9C%9F%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "小红书搜「AI 写真」",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=AI%E5%86%99%E7%9C%9F"
+        },
+        {
+          "label": "在 xiaohongshu 搜索 'AI 写真'",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=AI%20%E5%86%99%E7%9C%9F"
+        },
+        {
+          "label": "知乎教程合集",
+          "url": "https://www.zhihu.com/search?q=AI%E5%86%99%E7%9C%9F%E5%89%AF%E4%B8%9A"
+        }
       ]
     },
     "actions": {
@@ -531,11 +892,28 @@
     "name": "小红书烘焙宝妈 · 私房模式",
     "category": "私房手作食品",
     "business": "小红书种草 → 微信下单 → 同城配送/快递",
-    "tags": ["小红书", "烘焙", "宝妈", "私房", "手作", "副业", "同城"],
-    "platforms": ["xiaohongshu", "wechat"],
+    "tags": [
+      "小红书",
+      "烘焙",
+      "宝妈",
+      "私房",
+      "手作",
+      "副业",
+      "同城"
+    ],
+    "platforms": [
+      "xiaohongshu",
+      "wechat"
+    ],
     "monthly_profit_wan_low": 1,
     "monthly_profit_wan_high": 8,
-    "clone": {"cash": 6, "logic": 9, "operability": 8, "no_self": 10, "evidence": 6},
+    "clone": {
+      "cash": 6,
+      "logic": 9,
+      "operability": 8,
+      "no_self": 10,
+      "evidence": 6
+    },
     "rate": {
       "main_price": "¥58-198 / 单",
       "price_ladder": "尝鲜小份 ¥39 → 标准款 ¥98 → 礼盒 ¥198",
@@ -559,9 +937,22 @@
     "reality": {
       "snapshot": "小红书 1-3 万粉，月单 50-150 个，毛利 50%",
       "links": [
-        {"label": "小红书搜「私房烘焙」", "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%A7%81%E6%88%BF%E7%83%98%E7%84%99"},
-        {"label": "知乎宝妈副业指南", "url": "https://www.zhihu.com/search?q=%E5%AE%9D%E5%A6%88%E5%89%AF%E4%B8%9A%E7%83%98%E7%84%99"},
-        {"label": "代表账号搜索结果", "url": "https://www.xiaohongshu.com/search_result"}
+        {
+          "label": "Google 搜「小红书烘焙宝妈」最新数据",
+          "url": "https://www.google.com/search?q=%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%83%98%E7%84%99%E5%AE%9D%E5%A6%88%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "小红书搜「私房烘焙」",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%A7%81%E6%88%BF%E7%83%98%E7%84%99"
+        },
+        {
+          "label": "知乎宝妈副业指南",
+          "url": "https://www.zhihu.com/search?q=%E5%AE%9D%E5%A6%88%E5%89%AF%E4%B8%9A%E7%83%98%E7%84%99"
+        },
+        {
+          "label": "在 xiaohongshu 搜索 '小红书烘焙宝妈'",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%83%98%E7%84%99%E5%AE%9D%E5%A6%88"
+        }
       ]
     },
     "actions": {
@@ -575,11 +966,28 @@
     "name": "小宇宙独立播客 + 商单模式",
     "category": "播客 IP / 商单变现",
     "business": "小宇宙播客 → 商业广告 + 知识星球 + 出书",
-    "tags": ["播客", "小宇宙", "独立创作者", "商单", "知识IP", "音频"],
-    "platforms": ["xiaoyuzhou", "apple_podcast", "wechat"],
+    "tags": [
+      "播客",
+      "小宇宙",
+      "独立创作者",
+      "商单",
+      "知识IP",
+      "音频"
+    ],
+    "platforms": [
+      "xiaoyuzhou",
+      "apple_podcast",
+      "wechat"
+    ],
     "monthly_profit_wan_low": 3,
     "monthly_profit_wan_high": 20,
-    "clone": {"cash": 7, "logic": 8, "operability": 6, "no_self": 10, "evidence": 8},
+    "clone": {
+      "cash": 7,
+      "logic": 8,
+      "operability": 6,
+      "no_self": 10,
+      "evidence": 8
+    },
     "rate": {
       "main_price": "单期商单 ¥1-10 万 + 知识星球 ¥99-299/年",
       "price_ladder": "免费节目 → 知识星球 ¥199 → 商单 ¥1-10 万",
@@ -603,9 +1011,22 @@
     "reality": {
       "snapshot": "小宇宙 5000-5万订阅，单期 1-10 万播放",
       "links": [
-        {"label": "小宇宙官网", "url": "https://www.xiaoyuzhoufm.com/"},
-        {"label": "代表节目搜索", "url": "https://www.xiaoyuzhoufm.com/search"},
-        {"label": "公众号「JustPod」", "url": "https://mp.weixin.qq.com/"}
+        {
+          "label": "Google 搜「小宇宙独立播客 + 商单模式」最新数据",
+          "url": "https://www.google.com/search?q=%E5%B0%8F%E5%AE%87%E5%AE%99%E7%8B%AC%E7%AB%8B%E6%92%AD%E5%AE%A2%20%2B%20%E5%95%86%E5%8D%95%E6%A8%A1%E5%BC%8F%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "小宇宙官网",
+          "url": "https://www.xiaoyuzhoufm.com/"
+        },
+        {
+          "label": "代表节目搜索",
+          "url": "https://www.xiaoyuzhoufm.com/search"
+        },
+        {
+          "label": "在 xiaoyuzhou 搜索 '小宇宙独立播客 + 商单模式'",
+          "url": "https://www.xiaoyuzhoufm.com/search?keyword=%E5%B0%8F%E5%AE%87%E5%AE%99%E7%8B%AC%E7%AB%8B%E6%92%AD%E5%AE%A2%20%2B%20%E5%95%86%E5%8D%95%E6%A8%A1%E5%BC%8F"
+        }
       ]
     },
     "actions": {
@@ -619,11 +1040,28 @@
     "name": "小红书穿搭分销账号",
     "category": "穿搭种草 / 淘宝联盟",
     "business": "小红书穿搭笔记 → 淘宝/京东商品分销 → 佣金",
-    "tags": ["小红书", "穿搭", "淘宝联盟", "分销", "种草", "佣金", "女性"],
-    "platforms": ["xiaohongshu", "taobao"],
+    "tags": [
+      "小红书",
+      "穿搭",
+      "淘宝联盟",
+      "分销",
+      "种草",
+      "佣金",
+      "女性"
+    ],
+    "platforms": [
+      "xiaohongshu",
+      "taobao"
+    ],
     "monthly_profit_wan_low": 1,
     "monthly_profit_wan_high": 10,
-    "clone": {"cash": 6, "logic": 9, "operability": 9, "no_self": 10, "evidence": 7},
+    "clone": {
+      "cash": 6,
+      "logic": 9,
+      "operability": 9,
+      "no_self": 10,
+      "evidence": 7
+    },
     "rate": {
       "main_price": "无固定单价，按佣金 5-30%",
       "price_ladder": "免费内容 → 佣金分销 → 自营选品 → 直播带货",
@@ -647,9 +1085,22 @@
     "reality": {
       "snapshot": "小红书 5-30 万粉，月佣金 1-10 万",
       "links": [
-        {"label": "小红书搜「穿搭」", "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%A9%BF%E6%90%AD"},
-        {"label": "淘宝联盟招商", "url": "https://pub.alimama.com/"},
-        {"label": "知乎小红书带货指南", "url": "https://www.zhihu.com/search?q=%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%B8%A6%E8%B4%A7"}
+        {
+          "label": "Google 搜「小红书穿搭分销账号」最新数据",
+          "url": "https://www.google.com/search?q=%E5%B0%8F%E7%BA%A2%E4%B9%A6%E7%A9%BF%E6%90%AD%E5%88%86%E9%94%80%E8%B4%A6%E5%8F%B7%20%E6%9C%88%E5%88%A9%E6%B6%A6%20%E6%A1%88%E4%BE%8B"
+        },
+        {
+          "label": "小红书搜「穿搭」",
+          "url": "https://www.xiaohongshu.com/search_result?keyword=%E7%A9%BF%E6%90%AD"
+        },
+        {
+          "label": "淘宝联盟招商",
+          "url": "https://pub.alimama.com/"
+        },
+        {
+          "label": "知乎小红书带货指南",
+          "url": "https://www.zhihu.com/search?q=%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%B8%A6%E8%B4%A7"
+        }
       ]
     },
     "actions": {

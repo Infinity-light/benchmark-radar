@@ -58,11 +58,17 @@ author: WaterFish
 ## Workflow
 
 1. **审查输入**：调 `scripts/radar.py` → 若命中 self-trap 关键词，立即返回拒绝 JSON 并提示用户重新提问
-2. **匹配候选**：从 `data/case_library.json` + 实时多平台数据源（agent-reach-pro）抽取候选对标
-3. **CLONE 过滤**：每个候选过 5 道闸门（Cash / Logic / Operability / No Self / Evidence），任一不及格即淘汰
-4. **5R 颗粒度补全**：对通过的对标补全 R1-R5 字段（详见 references/5r-matrix.md）
+2. **实时大数据抓取**：radar.py 内部自动 subprocess 调用 `scripts/enrich.py` 真实联网拉取三个公开 JSON API：
+   - **loot-drop.io** (`/api/database-explore`)：1700+ 真实死亡创业 + AI 复盘 → 反面教材
+   - **GitHub Search API** (`api.github.com/search/repositories`)：stars > 50 的开源工具变现项目
+   - **HN Algolia** (`hn.algolia.com/api/v1/search`)：Show HN 独立产品发布
+   - 三源并行抓取，单源超时 8s 不阻断其他源；网络全断时降级到纯案例库
+3. **合并 + 过滤**：实时候选 + 本地案例库一起进入 CLONE 五道闸门过滤（C/L/O/N/E 任一不及格即淘汰）+ 平台过滤 + 利润过滤（10x 信条）
+4. **5R 颗粒度补全**：对通过的对标补全 R1-R5 字段（详见 references/5r-matrix.md），失败案例额外含 death_summary 复盘叙述
 5. **生成报告**：调 `scripts/reporter.py` 渲染 HTML，含 CLONE 评分条 + 5R 表格 + 三段行动 + 决策提示
 6. **校验输出**：检查 HTML 文件已生成、候选数 ≥ 1、每个候选 5R 字段非空，失败按 ## Failure 处理
+
+**主 Claude 可选增强（中文平台对标）**：本 skill 默认走英文公开 API。若用户场景明确是中文 KOL / 国内电商，主 Claude 应额外调用 `agent-reach-pro:xiaohongshu / wechat / bilibili / xiaoyuzhou` 等已装好的 skill 拉取实时中文对标数据，作为 radar.py 输出的补强。
 
 ## Outputs
 

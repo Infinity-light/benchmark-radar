@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Benchmark Radar · 对标雷达报告</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #ffffff;
+    --paper-soft: #f7f6f2;
+    --line: #e5e3dc;
+    --accent: #1d4f3f;
+    --accent-soft: #e8f0ec;
+    --warn: #b91c1c;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 48px 32px 80px; }
+  .brand {
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 16px;
+  }
+  .brand h1 { font-size: 28px; margin: 0; letter-spacing: -0.5px; }
+  .brand .tag {
+    font-size: 12px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase;
+  }
+  .meta { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .meta span strong { color: var(--ink); font-weight: 500; }
+
+  .summary {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 32px 0 16px;
+    font-size: 15px;
+  }
+  .summary h2 { margin: 0 0 8px; font-size: 14px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
+  .summary p { margin: 6px 0; }
+
+  .reject {
+    background: #fef2f2;
+    border-left: 4px solid var(--warn);
+    padding: 20px 24px;
+    margin: 32px 0;
+    color: var(--warn);
+  }
+  .reject h2 { margin: 0 0 8px; font-size: 16px; }
+
+  .card {
+    background: var(--paper-soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 28px 24px;
+    margin: 20px 0;
+  }
+  .card-head {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 14px; margin-bottom: 16px;
+  }
+  .card-head .name { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+  .card-head .cat { font-size: 12px; color: var(--muted); }
+  .clone-total {
+    background: var(--ink); color: var(--paper);
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .clone-bars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 12px 0 20px; }
+  .clone-cell {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 10px 8px;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .clone-cell .letter {
+    display: block;
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    font-family: "SF Mono", Consolas, monospace;
+  }
+  .clone-cell .label { display: block; font-size: 10px; color: var(--muted); letter-spacing: 0.5px; text-transform: uppercase; margin: 2px 0; }
+  .clone-cell .score { font-size: 14px; font-weight: 600; }
+  .clone-cell.weak .score { color: var(--warn); }
+
+  .r-grid { margin: 16px 0; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+  .r-row { display: grid; grid-template-columns: 80px 1fr; border-bottom: 1px solid var(--line); }
+  .r-row:last-child { border-bottom: none; }
+  .r-key { background: var(--paper); padding: 12px 14px; font-weight: 600; font-size: 13px; color: var(--accent); border-right: 1px solid var(--line); }
+  .r-key small { display: block; font-weight: 400; color: var(--muted); font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .r-val { padding: 12px 14px; font-size: 14px; }
+  .r-val ul { margin: 0; padding-left: 20px; }
+  .r-val li { margin: 2px 0; }
+
+  .actions { margin-top: 18px; }
+  .actions h4 { font-size: 13px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin: 0 0 10px; }
+  .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .step {
+    background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; border-radius: 3px;
+    font-size: 13px;
+  }
+  .step .when { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+
+  .links { margin-top: 16px; font-size: 13px; }
+  .links h4 { font-size: 13px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin: 0 0 8px; }
+  .links a { color: var(--accent); word-break: break-all; }
+  .links li { margin: 3px 0; }
+
+  .one-liner {
+    margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line);
+    font-style: italic; color: var(--ink); font-size: 14px;
+  }
+
+  .bottom {
+    margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--ink);
+  }
+  .bottom h2 { font-size: 18px; margin: 0 0 16px; }
+  .bottom .qs { background: var(--paper-soft); padding: 20px 24px; border-left: 4px solid var(--accent); }
+  .bottom .qs ol { margin: 0; padding-left: 20px; }
+  .bottom .qs li { margin: 8px 0; font-size: 14px; }
+
+  .verdict {
+    margin-top: 24px; padding: 24px;
+    background: var(--ink); color: var(--paper);
+    font-size: 16px; line-height: 1.6;
+    border-radius: 4px;
+  }
+  .verdict::before { content: "「"; color: var(--accent); font-size: 24px; }
+  .verdict::after { content: "」"; color: var(--accent); font-size: 24px; }
+
+  .footer {
+    margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line);
+    font-size: 11px; color: var(--muted); letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><h1>对标雷达报告</h1><span class="tag">Benchmark Radar · CLONE + 5R</span></div><div class="meta"><span>查询：<strong>AI coding tool</strong></span><span>平台过滤：<strong>全平台</strong></span><span>利润目标：<strong>未指定</strong></span><span>候选数：<strong>6</strong></span><span>生成时间：<strong>2026-05-14 23:08</strong></span></div><div class="summary"><h2>市场扫描总结</h2><p>· 共有 <strong>6</strong> 个对标通过 CLONE 五道闸门，按总分降序排列。</p><p>· 主要分布在 <strong>GitHub、Hacker News + Twitter + ProductHunt</strong>。</p><p>· 这批对标的月利润下限平均 <strong>¥70.2 万</strong>，是市场上"已经被验证"的赚钱方向。</p></div><div class="card"><div class="card-head"><div><div class="name">#1 · ⭐ build-your-own-x · GitHub</div><div class="cat">开源项目变现 · Master programming by recreating your favorite technologies from scratch. · 估算月利润 ¥150.4–752.1 万</div></div><div class="clone-total">CLONE 总分 42/50</div></div><div class="clone-bars"><div class="clone-cell"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">6/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：免费开源 + GitHub Sponsors / 商业 license</li><li>价差结构：免费 → Sponsors $5/月 → 商业版 $100-1000/月</li><li>引流款 vs 利润款：免费开源 → 商业 license 价差需具体看项目</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：GitHub</li><li>内容形式：代码 + README + Issues + 社区</li><li>发布频率：最近更新: 2026-05-14</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：build-your-own-x</li><li>封面元素：README badge + logo + GIF 演示</li><li>文案调性：技术、开源精神、社区驱动</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：git clone / pip install / npm install</li><li>促销手段：ProductHunt + HN + Twitter + star 病毒传播</li><li>复购触发：持续更新 + 商业版升级 + 培训咨询</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：⭐ 501392 stars · 47552 forks · 481 issues · 主语言 Markdown</div><ul style="margin-top:8px"><li><a href="https://github.com/codecrafters-io/build-your-own-x" target="_blank" rel="noopener">GitHub 仓库</a></li><li><a href="https://github.com/codecrafters-io" target="_blank" rel="noopener">作者主页</a></li><li><a href="https://github.com/codecrafters-io/build-your-own-x/issues" target="_blank" rel="noopener">Issues</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>clone codecrafters-io/build-your-own-x 读 README, 理解它解决什么问题</div><div class="step"><div class="when">本周</div>在你的领域选一个类似痛点, 做最小开源原型上 GitHub</div><div class="step"><div class="when">本月</div>上 ProductHunt + 写 Show HN, 看是否能复刻流量</div></div></div><div class="one-liner">GitHub 501392⭐ 说明这个方向已被验证有真实用户。</div></div><div class="card"><div class="card-head"><div><div class="name">#2 · ⭐ awesome · GitHub</div><div class="cat">开源项目变现 · 😎 Awesome lists about all kinds of interesting topics · 估算月利润 ¥139.9–699.4 万</div></div><div class="clone-total">CLONE 总分 42/50</div></div><div class="clone-bars"><div class="clone-cell"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">6/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：免费开源 + GitHub Sponsors / 商业 license</li><li>价差结构：免费 → Sponsors $5/月 → 商业版 $100-1000/月</li><li>引流款 vs 利润款：免费开源 → 商业 license 价差需具体看项目</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：GitHub</li><li>内容形式：代码 + README + Issues + 社区</li><li>发布频率：最近更新: 2026-05-14</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：awesome</li><li>封面元素：README badge + logo + GIF 演示</li><li>文案调性：技术、开源精神、社区驱动</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：git clone / pip install / npm install</li><li>促销手段：ProductHunt + HN + Twitter + star 病毒传播</li><li>复购触发：持续更新 + 商业版升级 + 培训咨询</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：⭐ 466273 stars · 34969 forks · 75 issues · 主语言 None</div><ul style="margin-top:8px"><li><a href="https://github.com/sindresorhus/awesome" target="_blank" rel="noopener">GitHub 仓库</a></li><li><a href="https://github.com/sindresorhus" target="_blank" rel="noopener">作者主页</a></li><li><a href="https://github.com/sindresorhus/awesome/issues" target="_blank" rel="noopener">Issues</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>clone sindresorhus/awesome 读 README, 理解它解决什么问题</div><div class="step"><div class="when">本周</div>在你的领域选一个类似痛点, 做最小开源原型上 GitHub</div><div class="step"><div class="when">本月</div>上 ProductHunt + 写 Show HN, 看是否能复刻流量</div></div></div><div class="one-liner">GitHub 466273⭐ 说明这个方向已被验证有真实用户。</div></div><div class="card"><div class="card-head"><div><div class="name">#3 · ⭐ public-apis · GitHub</div><div class="cat">开源项目变现 · A collective list of free APIs · 估算月利润 ¥130.5–652.5 万</div></div><div class="clone-total">CLONE 总分 42/50</div></div><div class="clone-bars"><div class="clone-cell"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">6/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：免费开源 + GitHub Sponsors / 商业 license</li><li>价差结构：免费 → Sponsors $5/月 → 商业版 $100-1000/月</li><li>引流款 vs 利润款：免费开源 → 商业 license 价差需具体看项目</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：GitHub</li><li>内容形式：代码 + README + Issues + 社区</li><li>发布频率：最近更新: 2026-05-14</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：public-apis</li><li>封面元素：README badge + logo + GIF 演示</li><li>文案调性：技术、开源精神、社区驱动</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：git clone / pip install / npm install</li><li>促销手段：ProductHunt + HN + Twitter + star 病毒传播</li><li>复购触发：持续更新 + 商业版升级 + 培训咨询</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：⭐ 434979 stars · 47659 forks · 1325 issues · 主语言 Python</div><ul style="margin-top:8px"><li><a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">GitHub 仓库</a></li><li><a href="https://github.com/public-apis" target="_blank" rel="noopener">作者主页</a></li><li><a href="https://github.com/public-apis/public-apis/issues" target="_blank" rel="noopener">Issues</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>clone public-apis/public-apis 读 README, 理解它解决什么问题</div><div class="step"><div class="when">本周</div>在你的领域选一个类似痛点, 做最小开源原型上 GitHub</div><div class="step"><div class="when">本月</div>上 ProductHunt + 写 Show HN, 看是否能复刻流量</div></div></div><div class="one-liner">GitHub 434979⭐ 说明这个方向已被验证有真实用户。</div></div><div class="card"><div class="card-head"><div><div class="name">#4 · 💬 Show HN: Jolt – AI coding tool for production, 100K+ li · HN</div><div class="cat">独立产品 / Show HN · Show HN: Jolt – AI coding tool for production, 100K+ line codebases · 估算月利润 ¥0.1–0.4 万</div></div><div class="clone-total">CLONE 总分 31/50</div></div><div class="clone-bars"><div class="clone-cell weak"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">0/10</span></div><div class="clone-cell weak"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">5/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：见产品官网 (独立 SaaS 常见 $9-99/月)</li><li>价差结构：免费试用 → 订阅 → 企业版</li><li>引流款 vs 利润款：免费 trial → 企业版价差通常 10-100 倍</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：Hacker News + Twitter + ProductHunt</li><li>内容形式：Show HN 发帖 + Twitter 实时分享</li><li>发布频率：发布于 2025-01-17</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：Show HN: [产品名] – [一句话价值]</li><li>封面元素：极简 landing page + GIF demo</li><li>文案调性：简洁、技术直白、anti-bloat</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：网站注册即用 / 代码下载</li><li>促销手段：HN front page + Twitter + ProductHunt 三件套</li><li>复购触发：订阅自动续费 / 升级</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：👍 15 points · 💬 2 comments · author: yevyevyev</div><ul style="margin-top:8px"><li><a href="https://news.ycombinator.com/item?id=42742265" target="_blank" rel="noopener">HN 讨论</a></li><li><a href="https://app.usejolt.ai/" target="_blank" rel="noopener">产品链接</a></li><li><a href="https://news.ycombinator.com/user?id=yevyevyev" target="_blank" rel="noopener">作者 HN</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>读 HN 讨论 https://news.ycombinator.com/item?id=42742265 看 top 评论挖掘真实反馈</div><div class="step"><div class="when">本周</div>访问该产品官网, 列出他的定价 / 落地页结构 / 推广方式</div><div class="step"><div class="when">本月</div>做一个类似定位的最小原型 Show HN, 看市场反应</div></div></div><div class="one-liner">HN 15👍 说明这个方向有真实开发者关注。</div></div><div class="card"><div class="card-head"><div><div class="name">#5 · 💬 Show HN: An AI coding tool for unserious projects · HN</div><div class="cat">独立产品 / Show HN · Show HN: An AI coding tool for unserious projects · 估算月利润 ¥0.0–0.2 万</div></div><div class="clone-total">CLONE 总分 31/50</div></div><div class="clone-bars"><div class="clone-cell weak"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">0/10</span></div><div class="clone-cell weak"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">5/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：见产品官网 (独立 SaaS 常见 $9-99/月)</li><li>价差结构：免费试用 → 订阅 → 企业版</li><li>引流款 vs 利润款：免费 trial → 企业版价差通常 10-100 倍</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：Hacker News + Twitter + ProductHunt</li><li>内容形式：Show HN 发帖 + Twitter 实时分享</li><li>发布频率：发布于 2025-08-30</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：Show HN: [产品名] – [一句话价值]</li><li>封面元素：极简 landing page + GIF demo</li><li>文案调性：简洁、技术直白、anti-bloat</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：网站注册即用 / 代码下载</li><li>促销手段：HN front page + Twitter + ProductHunt 三件套</li><li>复购触发：订阅自动续费 / 升级</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：👍 5 points · 💬 0 comments · author: liszper</div><ul style="margin-top:8px"><li><a href="https://news.ycombinator.com/item?id=45077997" target="_blank" rel="noopener">HN 讨论</a></li><li><a href="https://crazycontext.com/" target="_blank" rel="noopener">产品链接</a></li><li><a href="https://news.ycombinator.com/user?id=liszper" target="_blank" rel="noopener">作者 HN</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>读 HN 讨论 https://news.ycombinator.com/item?id=45077997 看 top 评论挖掘真实反馈</div><div class="step"><div class="when">本周</div>访问该产品官网, 列出他的定价 / 落地页结构 / 推广方式</div><div class="step"><div class="when">本月</div>做一个类似定位的最小原型 Show HN, 看市场反应</div></div></div><div class="one-liner">HN 5👍 说明这个方向有真实开发者关注。</div></div><div class="card"><div class="card-head"><div><div class="name">#6 · 💬 Show HN: Agentic AI coding tool that&#x27;s easy to use, tra · HN</div><div class="cat">独立产品 / Show HN · Show HN: Agentic AI coding tool that&#x27;s easy to use, transparent and customizable · 估算月利润 ¥0.0–0.1 万</div></div><div class="clone-total">CLONE 总分 31/50</div></div><div class="clone-bars"><div class="clone-cell weak"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">0/10</span></div><div class="clone-cell weak"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">5/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：见产品官网 (独立 SaaS 常见 $9-99/月)</li><li>价差结构：免费试用 → 订阅 → 企业版</li><li>引流款 vs 利润款：免费 trial → 企业版价差通常 10-100 倍</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：Hacker News + Twitter + ProductHunt</li><li>内容形式：Show HN 发帖 + Twitter 实时分享</li><li>发布频率：发布于 2024-09-24</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：Show HN: [产品名] – [一句话价值]</li><li>封面元素：极简 landing page + GIF demo</li><li>文案调性：简洁、技术直白、anti-bloat</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：网站注册即用 / 代码下载</li><li>促销手段：HN front page + Twitter + ProductHunt 三件套</li><li>复购触发：订阅自动续费 / 升级</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：👍 2 points · 💬 2 comments · author: Walecs</div><ul style="margin-top:8px"><li><a href="https://news.ycombinator.com/item?id=41640186" target="_blank" rel="noopener">HN 讨论</a></li><li><a href="https://oppydev.ai/download/" target="_blank" rel="noopener">产品链接</a></li><li><a href="https://news.ycombinator.com/user?id=Walecs" target="_blank" rel="noopener">作者 HN</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>读 HN 讨论 https://news.ycombinator.com/item?id=41640186 看 top 评论挖掘真实反馈</div><div class="step"><div class="when">本周</div>访问该产品官网, 列出他的定价 / 落地页结构 / 推广方式</div><div class="step"><div class="when">本月</div>做一个类似定位的最小原型 Show HN, 看市场反应</div></div></div><div class="one-liner">HN 2👍 说明这个方向有真实开发者关注。</div></div><div class="bottom"><h2>你必须自己回答的 3 个决策问题</h2><div class="qs"><ol><li>这批对标里，哪一个的获客平台是你愿意每天花 1 小时去深耕的？（如果没有，先解决「平台选择」再谈对标）</li><li>这批对标的最低定价是 ¥免费开源 + GitHub Sponsors / 商业 license，你愿意先按这个价格收第一笔钱吗？（如果不愿意，先解决「定价心理障碍」）</li><li>这批对标的"今天能做的事"里，你今晚 22 点之前会真的做哪一件？（如果一个都不会做，对标就只是收藏夹素材）</li></ol></div><div class="verdict">市场不缺对标，缺的是把"今天能做的事"真的做了的人。这份报告 24 小时内不开始第一步动作的话，AI 给你再多对标都是噪音。</div></div>
+  <div class="footer">
+    Benchmark Radar · 对标雷达 — 由 CLONE 五道闸门 + 5R 复刻矩阵驱动 ·
+    方法论受 dontbesilent 启发，工程实现独立。
+  </div>
+</div>
+</body>
+</html>

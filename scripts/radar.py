@@ -13,6 +13,7 @@ Benchmark Radar - 主引擎
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -93,13 +94,38 @@ def filter_by_profit(cases: list, target_wan: float | None) -> list:
     return [c for c in cases if c.get("monthly_profit_wan_low", 0) >= threshold]
 
 
+def fetch_realtime(query: str, limit: int = 3, timeout: float = 10) -> tuple[list[dict], list[dict]]:
+    """调用 enrich.py 拉实时大数据（loot-drop / github / hn）。
+    返回 (candidates, errors)。失败不抛异常，仅返回空数组 + 错误信息。
+    """
+    enrich_path = Path(__file__).resolve().parent / "enrich.py"
+    if not enrich_path.exists():
+        return [], [{"source": "enrich", "error": "enrich.py 不存在"}]
+
+    try:
+        proc = subprocess.run(
+            [sys.executable, "-X", "utf8", str(enrich_path), query,
+             "--limit", str(limit), "--timeout", str(timeout)],
+            capture_output=True, text=True, encoding="utf-8",
+            timeout=timeout * 4,  # 多源并行总超时
+        )
+        if proc.returncode != 0:
+            return [], [{"source": "enrich", "error": f"exit {proc.returncode}: {proc.stderr[:200]}"}]
+        data = json.loads(proc.stdout)
+        return data.get("candidates", []), data.get("errors", [])
+    except (subprocess.TimeoutExpired, json.JSONDecodeError) as e:
+        return [], [{"source": "enrich", "error": f"{type(e).__name__}: {str(e)[:120]}"}]
+
+
 def main():
     parser = argparse.ArgumentParser(description="Benchmark Radar 主引擎")
     parser.add_argument("query", help="用户业务方向描述")
-    parser.add_argument("--platform", default=None, help="平台过滤（xiaohongshu/bilibili/wechat/github/...）")
+    parser.add_argument("--platform", default=None, help="平台过滤（xiaohongshu/bilibili/wechat/github/lootdrop/...）")
     parser.add_argument("--profit-target", type=float, default=None, help="月利润目标（万元）")
     parser.add_argument("--top", type=int, default=8, help="返回前 N 个对标")
     parser.add_argument("--library", default=None, help="案例库路径（默认 ../data/case_library.json）")
+    parser.add_argument("--no-realtime", action="store_true", help="禁用实时大数据抓取（仅用本地案例库）")
+    parser.add_argument("--realtime-limit", type=int, default=3, help="每个实时源最多返回 N 条（默认 3）")
     args = parser.parse_args()
 
     # Self-trap 检测
@@ -134,8 +160,17 @@ def main():
 
     library = load_library(library_path)
 
+    # 实时大数据抓取（默认启用）
+    realtime_cands = []
+    realtime_errors = []
+    if not args.no_realtime:
+        realtime_cands, realtime_errors = fetch_realtime(args.query, limit=args.realtime_limit)
+
+    # 合并实时 + 案例库
+    merged = realtime_cands + library
+
     # 平台过滤
-    pool = filter_by_platform(library, args.platform)
+    pool = filter_by_platform(merged, args.platform)
     after_platform = len(pool)
 
     # 利润过滤（应用 CLONE.C 信条：≥ 10x 目标）
@@ -153,12 +188,18 @@ def main():
         )
 
     # 关键词匹配评分
+    # 实时抓取的候选（_source in lootdrop/github/hn）天然带 query 相关性 → 给基础分 50，不再过滤
+    # 案例库候选必须通过 token-overlap 才进入
     q_tokens = tokenize(args.query)
     scored = []
     for case in pool:
-        match_score = score_match(q_tokens, case)
-        if match_score == 0:
-            continue
+        is_realtime = case.get("_source") in ("lootdrop", "github", "hn")
+        if is_realtime:
+            match_score = 5  # 实时数据基础分（远高于本地匹配的 0-3，但不至于淹没强匹配本地案例）
+        else:
+            match_score = score_match(q_tokens, case)
+            if match_score == 0:
+                continue
         clone_score = clone_total(case)
         total = match_score * 10 + clone_score  # match 优先，CLONE 作 tie-breaker
         scored.append((total, match_score, clone_score, case))
@@ -174,12 +215,21 @@ def main():
         all_with_clone.sort(key=lambda x: -x[0])
         top_cases = [c for _, c in all_with_clone[:args.top]]
 
+    # 统计实时数据贡献
+    realtime_in_result = sum(1 for c in top_cases if c.get("_source") in ("lootdrop", "github", "hn"))
+    library_in_result = len(top_cases) - realtime_in_result
+
     result = {
         "status": "ok",
         "query": args.query,
         "platform_filter": args.platform,
         "profit_target_wan": args.profit_target,
         "candidates_count": len(top_cases),
+        "realtime_enabled": not args.no_realtime,
+        "realtime_candidates_fetched": len(realtime_cands),
+        "realtime_in_result": realtime_in_result,
+        "library_in_result": library_in_result,
+        "realtime_errors": realtime_errors,
         "fallback": fallback,
         "fallback_reason": "未匹配到强相关案例，按 CLONE 总分降序展示库内通过过滤的全部对标" if fallback else None,
         "hint": hint,
