@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Benchmark Radar · 对标雷达报告</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #ffffff;
+    --paper-soft: #f7f6f2;
+    --line: #e5e3dc;
+    --accent: #1d4f3f;
+    --accent-soft: #e8f0ec;
+    --warn: #b91c1c;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 48px 32px 80px; }
+  .brand {
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 16px;
+  }
+  .brand h1 { font-size: 28px; margin: 0; letter-spacing: -0.5px; }
+  .brand .tag {
+    font-size: 12px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase;
+  }
+  .meta { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .meta span strong { color: var(--ink); font-weight: 500; }
+
+  .summary {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 32px 0 16px;
+    font-size: 15px;
+  }
+  .summary h2 { margin: 0 0 8px; font-size: 14px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; }
+  .summary p { margin: 6px 0; }
+
+  .reject {
+    background: #fef2f2;
+    border-left: 4px solid var(--warn);
+    padding: 20px 24px;
+    margin: 32px 0;
+    color: var(--warn);
+  }
+  .reject h2 { margin: 0 0 8px; font-size: 16px; }
+
+  .card {
+    background: var(--paper-soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 28px 24px;
+    margin: 20px 0;
+  }
+  .card-head {
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+    border-bottom: 1px dashed var(--line); padding-bottom: 14px; margin-bottom: 16px;
+  }
+  .card-head .name { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+  .card-head .cat { font-size: 12px; color: var(--muted); }
+  .clone-total {
+    background: var(--ink); color: var(--paper);
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 13px; font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .clone-bars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 12px 0 20px; }
+  .clone-cell {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 10px 8px;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .clone-cell .letter {
+    display: block;
+    font-size: 18px; font-weight: 700; color: var(--accent);
+    font-family: "SF Mono", Consolas, monospace;
+  }
+  .clone-cell .label { display: block; font-size: 10px; color: var(--muted); letter-spacing: 0.5px; text-transform: uppercase; margin: 2px 0; }
+  .clone-cell .score { font-size: 14px; font-weight: 600; }
+  .clone-cell.weak .score { color: var(--warn); }
+
+  .r-grid { margin: 16px 0; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+  .r-row { display: grid; grid-template-columns: 80px 1fr; border-bottom: 1px solid var(--line); }
+  .r-row:last-child { border-bottom: none; }
+  .r-key { background: var(--paper); padding: 12px 14px; font-weight: 600; font-size: 13px; color: var(--accent); border-right: 1px solid var(--line); }
+  .r-key small { display: block; font-weight: 400; color: var(--muted); font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .r-val { padding: 12px 14px; font-size: 14px; }
+  .r-val ul { margin: 0; padding-left: 20px; }
+  .r-val li { margin: 2px 0; }
+
+  .actions { margin-top: 18px; }
+  .actions h4 { font-size: 13px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin: 0 0 10px; }
+  .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .step {
+    background: var(--paper); border: 1px solid var(--line); padding: 12px 14px; border-radius: 3px;
+    font-size: 13px;
+  }
+  .step .when { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+
+  .links { margin-top: 16px; font-size: 13px; }
+  .links h4 { font-size: 13px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin: 0 0 8px; }
+  .links a { color: var(--accent); word-break: break-all; }
+  .links li { margin: 3px 0; }
+
+  .one-liner {
+    margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line);
+    font-style: italic; color: var(--ink); font-size: 14px;
+  }
+
+  .bottom {
+    margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--ink);
+  }
+  .bottom h2 { font-size: 18px; margin: 0 0 16px; }
+  .bottom .qs { background: var(--paper-soft); padding: 20px 24px; border-left: 4px solid var(--accent); }
+  .bottom .qs ol { margin: 0; padding-left: 20px; }
+  .bottom .qs li { margin: 8px 0; font-size: 14px; }
+
+  .verdict {
+    margin-top: 24px; padding: 24px;
+    background: var(--ink); color: var(--paper);
+    font-size: 16px; line-height: 1.6;
+    border-radius: 4px;
+  }
+  .verdict::before { content: "「"; color: var(--accent); font-size: 24px; }
+  .verdict::after { content: "」"; color: var(--accent); font-size: 24px; }
+
+  .footer {
+    margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line);
+    font-size: 11px; color: var(--muted); letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><h1>对标雷达报告</h1><span class="tag">Benchmark Radar · CLONE + 5R</span></div><div class="meta"><span>查询：<strong>知识付费</strong></span><span>平台过滤：<strong>全平台</strong></span><span>利润目标：<strong>未指定</strong></span><span>候选数：<strong>4</strong></span><span>生成时间：<strong>2026-05-14 21:42</strong></span></div><div class="summary"><h2>市场扫描总结</h2><p>· 共有 <strong>4</strong> 个对标通过 CLONE 五道闸门，按总分降序排列。</p><p>· 主要分布在 <strong>B站、小红书、小红书 + 公众号 + 推特、微信公众号</strong>。</p><p>· 这批对标的月利润下限平均 <strong>¥5.2 万</strong>，是市场上"已经被验证"的赚钱方向。</p></div><div class="card"><div class="card-head"><div><div class="name">#1 · dontbesilent · 商业诊断付费咨询</div><div class="cat">知识付费 / 付费咨询 · 微信 1v1 商业模式诊断 + 知识星球付费社群 · 估算月利润 ¥5–30 万</div></div><div class="clone-total">CLONE 总分 44/50</div></div><div class="clone-bars"><div class="clone-cell"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：1v1 咨询 ¥1000-3000/小时</li><li>价差结构：免费内容 → 知识星球 ¥99-299/年 → 1v1 咨询 ¥1000+/h</li><li>引流款 vs 利润款：免费小红书内容 → 1v1 咨询 ¥3000，无限倍价差</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：小红书 + 公众号 + 推特</li><li>内容形式：图文为主（金句体） + 偶尔长文</li><li>发布频率：每周 5-10 条小红书 + 公众号每月 4-8 篇</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：「[反直觉判断]」/「[业务问题] 是个错误的问题」</li><li>封面元素：纯文字 + 大字标题 + 简洁背景</li><li>文案调性：犀利、反鸡汤、维特根斯坦哲学风、消解问题为美</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：付款后微信加好友约时间，1v1 视频/语音咨询，结束发录音 + 文字总结</li><li>促销手段：几乎不打折，靠真实用户口碑 + 案例分享</li><li>复购触发：知识星球年费续费 + 老客户高频复咨</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：小红书 10万+粉丝，知识星球付费会员 1000+，月咨询档期常被订满</div><ul style="margin-top:8px"><li><a href="https://www.xiaohongshu.com/user/profile/dontbesilent" target="_blank" rel="noopener">小红书主账号</a></li><li><a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">公众号「不要沉默」</a></li><li><a href="https://github.com/dontbesilent" target="_blank" rel="noopener">DBS Skill 工具箱</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>小红书发 1 条「反常识业务判断」，标题用「XX 是个错误的问题」句式</div><div class="step"><div class="when">本周</div>建知识星球，定 ¥99/年，第一周不上架等内容沉淀</div><div class="step"><div class="when">本月</div>积累 30 条优质内容后开放 1v1 咨询，先 ¥500/h 试水</div></div></div><div class="one-liner">AI 时代最大的杠杆是「说清楚」的能力 —— 把诊断卖得比执行贵。</div></div><div class="card"><div class="card-head"><div><div class="name">#2 · 小K不刺 · 小红书 AI 工具教学</div><div class="cat">AI 工具教学自媒体 · 小红书内容引流 → 知识星球付费圈 + 1v1 工具配置 · 估算月利润 ¥3–15 万</div></div><div class="clone-total">CLONE 总分 44/50</div></div><div class="clone-bars"><div class="clone-cell"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">8/10</span></div><div class="clone-cell"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">8/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：知识星球 ¥99-199/年 + 单课 ¥99-299</li><li>价差结构：免费图文 → 入门课 ¥99 → 知识星球年订 ¥199 → 1v1 配置 ¥999</li><li>引流款 vs 利润款：免费小红书 → 1v1 配置 ¥999，10 倍价差</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：小红书</li><li>内容形式：图文为主，9 宫格教程 + 短视频演示</li><li>发布频率：每周 4-6 条图文</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：「我用 [AI工具] 30 分钟做出了 [量化结果]」/「打工人必备的 N 个 AI 工具」</li><li>封面元素：白底 + 大字 + 红色高亮关键词 + 截图缩略</li><li>文案调性：干货密度高、有具体步骤、低门槛、第一人称体验</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：私信发购买链接 → 加微信 → 拉群 → 群内每周直播答疑</li><li>促销手段：限时早鸟价 + 老学员推荐 ¥30 返现</li><li>复购触发：新工具上线即推新课程 + 年订续费</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：小红书 5-15 万粉，知识星球 500-2000 付费会员</div><ul style="margin-top:8px"><li><a href="https://www.xiaohongshu.com/search_result?keyword=AI%E5%B7%A5%E5%85%B7" target="_blank" rel="noopener">小红书代表账号搜索</a></li><li><a href="https://t.zsxq.com/" target="_blank" rel="noopener">知识星球 AI 工具圈</a></li><li><a href="https://www.xiaohongshu.com/explore" target="_blank" rel="noopener">代表 AI 教程合集</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>小红书注册账号 + 发第一条「我用 ChatGPT 30 分钟做了 X」实操图文</div><div class="step"><div class="when">本周</div>更 10 条 AI 工具实操，每条用相同标题模板测点击率</div><div class="step"><div class="when">本月</div>1000 粉时建知识星球，¥99/年起步</div></div></div><div class="one-liner">AI 工具的红利期不是工具本身，是「教别人用工具」。</div></div><div class="card"><div class="card-head"><div><div class="name">#3 · 曹将 · 公众号 PPT 知识 IP</div><div class="cat">知识付费个人 IP · 公众号 + 在线课 + 出书 + 企业内训 · 估算月利润 ¥8–40 万</div></div><div class="clone-total">CLONE 总分 44/50</div></div><div class="clone-bars"><div class="clone-cell"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">9/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：在线课 ¥199-599 + 1v1 PPT 美化 ¥500/页</li><li>价差结构：免费公众号 → 模板 ¥9.9 → 在线课 ¥299 → 出书 ¥69 → 企业内训 ¥3-10万</li><li>引流款 vs 利润款：免费公众号 → 企业内训 10万，万倍价差</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：微信公众号</li><li>内容形式：图文 + PPT 案例对比 + 模板</li><li>发布频率：每周 2-3 篇</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：「我用 [方法] 把 PPT 改成了 [对比效果]」</li><li>封面元素：PPT 截图前后对比 + 红色箭头 + 大字标题</li><li>文案调性：实用主义、对比驱动、视觉化</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：公众号支付 → 网盘/小鹅通发课 → 微信群答疑</li><li>促销手段：节日满减 + 老用户复购券</li><li>复购触发：新课上线推全员 + 企业内训按合同周期</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：公众号 100万+粉，出版多本 PPT 畅销书</div><ul style="margin-top:8px"><li><a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">公众号「曹将」</a></li><li><a href="https://search.jd.com/Search?keyword=%E6%9B%B9%E5%B0%86" target="_blank" rel="noopener">出版书籍京东页</a></li><li><a href="https://space.bilibili.com/" target="_blank" rel="noopener">B站账号</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>公众号注册 + 选一个职场技能（PPT/Excel/写作）建账号</div><div class="step"><div class="when">本周</div>更 5 篇「前后对比」体图文，验证内容形式</div><div class="step"><div class="when">本月</div>1万粉时开 ¥9.9 模板包试水转化</div></div></div><div class="one-liner">工具类教学的天花板不是粉丝量，是企业内训单价。</div></div><div class="card"><div class="card-head"><div><div class="name">#4 · B站 AI 教学 UP · 林粒粒呀模式</div><div class="cat">技术教学 UP 主 · B站免费教程 → 训练营 / 知识星球 / 1v1 私教 · 估算月利润 ¥5–30 万</div></div><div class="clone-total">CLONE 总分 43/50</div></div><div class="clone-bars"><div class="clone-cell"><span class="letter">C</span><span class="label">Cash 真赚钱</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">L</span><span class="label">Logic 逻辑透明</span><span class="score">9/10</span></div><div class="clone-cell"><span class="letter">O</span><span class="label">Operability 可仿</span><span class="score">7/10</span></div><div class="clone-cell"><span class="letter">N</span><span class="label">No Self 排除我</span><span class="score">10/10</span></div><div class="clone-cell"><span class="letter">E</span><span class="label">Evidence 证据链</span><span class="score">8/10</span></div></div><div class="r-grid"><div class="r-row"><div class="r-key">R1<small>Rate 价格</small></div><div class="r-val"><ul><li>主产品定价：训练营 ¥1999-3999 + 知识星球 ¥299/年</li><li>价差结构：免费视频 → 知识星球 ¥299 → 训练营 ¥1999 → 1v1 ¥1999/h</li><li>引流款 vs 利润款：免费 B站 → 1v1 ¥1999/h，无限倍价差</li></ul></div></div><div class="r-row"><div class="r-key">R2<small>Reach 触达</small></div><div class="r-val"><ul><li>主获客平台：B站</li><li>内容形式：5-15 分钟教学视频 + 配套代码</li><li>发布频率：每周 2-3 条</li></ul></div></div><div class="r-row"><div class="r-key">R3<small>Rhetoric 话语</small></div><div class="r-val"><ul><li>标题模板：「[小白] 也能学会的 [技术] / N 分钟搞懂 [概念]」</li><li>封面元素：本人头像 + 大字标题 + 黄底 + 数字</li><li>文案调性：亲切、零基础友好、实用主义</li></ul></div></div><div class="r-row"><div class="r-key">R4<small>Routine 闭环</small></div><div class="r-val"><ul><li>交付流程：视频简介导流公众号 → 加助理微信 → 进训练营群</li><li>促销手段：训练营开班前 7 折预售 + 老学员复购券</li><li>复购触发：进阶班 + 1v1 私教升级</li></ul></div></div><div class="r-row"><div class="r-key">R5<small>Reality 现场</small></div><div class="r-val"><div>数据快照：B站 30-100 万粉，训练营每期 200-500 人</div><ul style="margin-top:8px"><li><a href="https://search.bilibili.com/all?keyword=python%E6%95%99%E5%AD%A6" target="_blank" rel="noopener">B站搜索「Python 教学 UP 主」</a></li><li><a href="https://space.bilibili.com/" target="_blank" rel="noopener">代表 UP「林粒粒呀」</a></li><li><a href="https://t.zsxq.com/" target="_blank" rel="noopener">知识星球</a></li></ul></div></div></div><div class="actions"><h4>三段行动起点</h4><div class="timeline"><div class="step"><div class="when">今天</div>B站注册 + 选 1 个垂直技术（如 Python / Excel / AI 工具）</div><div class="step"><div class="when">本周</div>更 3 条「N 分钟学会 X」短视频</div><div class="step"><div class="when">本月</div>3000 粉时开训练营，¥499 起步</div></div></div><div class="one-liner">技术教学的真护城河不是技术深度，是「让小白看懂」的能力。</div></div><div class="bottom"><h2>你必须自己回答的 3 个决策问题</h2><div class="qs"><ol><li>这批对标里，哪一个的获客平台是你愿意每天花 1 小时去深耕的？（如果没有，先解决「平台选择」再谈对标）</li><li>这批对标的最低定价是 ¥1v1 咨询 ¥1000-3000/小时，你愿意先按这个价格收第一笔钱吗？（如果不愿意，先解决「定价心理障碍」）</li><li>这批对标的"今天能做的事"里，你今晚 22 点之前会真的做哪一件？（如果一个都不会做，对标就只是收藏夹素材）</li></ol></div><div class="verdict">市场不缺对标，缺的是把"今天能做的事"真的做了的人。这份报告 24 小时内不开始第一步动作的话，AI 给你再多对标都是噪音。</div></div>
+  <div class="footer">
+    Benchmark Radar · 对标雷达 — 由 CLONE 五道闸门 + 5R 复刻矩阵驱动 ·
+    方法论受 dontbesilent 启发，工程实现独立。
+  </div>
+</div>
+</body>
+</html>
