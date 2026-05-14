@@ -353,6 +353,16 @@ def render_report(data: dict) -> str:
         f'</div>'
     )
 
+    hint = data.get("hint")
+    hint_html = ""
+    if hint:
+        hint_html = (
+            f'<div class="summary" style="background:#fef9e7;border-left-color:#d97706">'
+            f'<h2 style="color:#92400e">提示</h2>'
+            f'<p>{esc(hint)}</p>'
+            f'</div>'
+        )
+
     if fallback:
         summary = (
             f'<div class="summary">'
@@ -360,7 +370,7 @@ def render_report(data: dict) -> str:
             f'<p>{esc(fb_reason or "未在案例库匹配到强相关对标，已按 CLONE 总分降序展示库内通过过滤的全部候选。")}</p>'
             f'<p>建议：换一个更具体的业务方向描述，或拓宽利润目标范围。</p>'
             f'</div>'
-        )
+        ) + hint_html
     else:
         platforms = sorted({c.get("reach", {}).get("platform", "未知") for c in candidates})
         avg_profit_low = sum(c.get("monthly_profit_wan_low", 0) for c in candidates) / max(len(candidates), 1)
@@ -371,7 +381,7 @@ def render_report(data: dict) -> str:
             f'<p>· 主要分布在 <strong>{esc("、".join(platforms))}</strong>。</p>'
             f'<p>· 这批对标的月利润下限平均 <strong>¥{avg_profit_low:.1f} 万</strong>，是市场上"已经被验证"的赚钱方向。</p>'
             f'</div>'
-        )
+        ) + hint_html
 
     cards = "".join(render_card(c, i + 1) for i, c in enumerate(candidates))
 

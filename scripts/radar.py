@@ -136,9 +136,21 @@ def main():
 
     # 平台过滤
     pool = filter_by_platform(library, args.platform)
+    after_platform = len(pool)
 
     # 利润过滤（应用 CLONE.C 信条：≥ 10x 目标）
     pool = filter_by_profit(pool, args.profit_target)
+    after_profit = len(pool)
+
+    # Hint：利润过滤可能淘汰了相关案例
+    hint = None
+    if args.profit_target and after_profit < after_platform:
+        removed = after_platform - after_profit
+        hint = (
+            f"⚠️ CLONE.C 信条已激活：利润目标 {args.profit_target} 万/月要求对标月利润 ≥ "
+            f"{args.profit_target * 10} 万。本次因此过滤掉 {removed} 个案例（其中可能含与你 query 高度相关的）。"
+            f"如果结果偏离预期，试试降低 --profit-target 或不指定。"
+        )
 
     # 关键词匹配评分
     q_tokens = tokenize(args.query)
@@ -170,6 +182,7 @@ def main():
         "candidates_count": len(top_cases),
         "fallback": fallback,
         "fallback_reason": "未匹配到强相关案例，按 CLONE 总分降序展示库内通过过滤的全部对标" if fallback else None,
+        "hint": hint,
         "candidates": top_cases,
     }
     print(json.dumps(result, ensure_ascii=False, indent=2))

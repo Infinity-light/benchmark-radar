@@ -18,11 +18,6 @@
       "content_form": "图文为主（金句体） + 偶尔长文",
       "frequency": "每周 5-10 条小红书 + 公众号每月 4-8 篇"
     },
-    "rhetoke": {
-      "title_template": "「[反直觉判断]」/「[业务问题] 是个错误的问题」",
-      "cover_elements": "纯文字 + 大字标题 + 简洁背景",
-      "tone": "犀利、反鸡汤、维特根斯坦哲学风、消解问题为美"
-    },
     "rhetoric": {
       "title_template": "「[反直觉判断]」/「[业务问题] 是个错误的问题」",
       "cover_elements": "纯文字 + 大字标题 + 简洁背景",
@@ -185,7 +180,7 @@
     "category": "知识付费个人 IP",
     "business": "公众号 + 在线课 + 出书 + 企业内训",
     "tags": ["PPT", "知识付费", "公众号", "个人IP", "课程", "出书", "企业培训"],
-    "platforms": ["wechat", "douyin", "bilibili"],
+    "platforms": ["wechat"],
     "monthly_profit_wan_low": 8,
     "monthly_profit_wan_high": 40,
     "clone": {"cash": 9, "logic": 9, "operability": 7, "no_self": 10, "evidence": 9},
@@ -374,11 +369,6 @@
       "platform": "Twitter + Notion 官方推荐 + 个人网站",
       "content_form": "Twitter 短推文 + Notion 模板截图 + YouTube 演示",
       "frequency": "Twitter 每天 + 训练营每季 1 期"
-    },
-    "rhetoke": {
-      "title_template": "「The [Notion] template I use to [solve X problem]」",
-      "cover_elements": "Notion 截图 + 简洁标题 + 渐变背景",
-      "tone": "实用主义、productivity、深入浅出"
     },
     "rhetoric": {
       "title_template": "「The [Notion] template I use to [solve X problem]」",
